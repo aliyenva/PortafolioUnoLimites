@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semana 5 · La derivada y la recta tangente ♡ Portafolio II</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="sparkles">🌸</div>
+  <div class="eyebrow">✿ Portafolio II · Derivadas ✿</div>
+  <h1 class="titulo">Semana 5</h1>
+  <p class="subtitulo">El concepto de derivada y la recta tangente</p>
+  <nav class="migas">
+    <a href="index.html">🏠 Portada</a>
+    <a href="semana5.html" aria-current="page">🌸 Semana 5</a>
+    <a href="semana6.html">🔮 Semana 6</a>
+    <a href="semana7.html">🍃 Semana 7</a>
+    <a href="semana8.html">🍑 Semana 8</a>
+  </nav>
+</header>
+
+<section class="semana">
+
+<!-- ═══════════ ACTIVIDAD 1 ═══════════ -->
+<div class="actividad">
+<h3 class="act">💬 Actividad 1 · Interacción con DiálogoX</h3>
+
+<h4>¿Qué es una derivada?</h4>
+<p>La derivada de una función mide la <strong>razón de cambio instantánea</strong>: qué tan rápido cambia f(x) en un punto exacto, no en un intervalo. Geométricamente es la <strong>pendiente de la recta tangente</strong> a la curva en ese punto (Stewart, 2018). Si la función describe una posición, su derivada describe la velocidad.</p>
+
+<h4>Derivadas en la vida cotidiana y en ingeniería de software 💻</h4>
+<ul>
+  <li><strong>Descenso de gradiente (machine learning):</strong> para entrenar un modelo se calcula la derivada (gradiente) de la función de error y se avanza en la dirección que más la reduce. Sin derivadas no habría redes neuronales.</li>
+  <li><strong>Monitoreo de sistemas:</strong> no solo importa cuánta memoria usa un servidor, sino la <em>tasa</em> a la que crece. Una derivada positiva y creciente en el uso de RAM anuncia un memory leak antes de que el servicio se caiga.</li>
+  <li><strong>Animaciones y físicas en videojuegos:</strong> la velocidad es la derivada de la posición y la aceleración la derivada de la velocidad; los motores de físicas las integran cuadro a cuadro para que el movimiento se vea natural. 🎮</li>
+</ul>
+
+<h4>La derivada y la recta tangente</h4>
+<p>Una <strong>recta secante</strong> corta la curva en dos puntos, P y Q. Su pendiente es el cambio promedio entre ellos. Si Q se desliza sobre la curva acercándose a P, la secante gira y su posición límite es la <strong>recta tangente</strong>: la recta que mejor aproxima la curva justo en P (Purcell et al., 2007). La derivada f′(a) es exactamente la pendiente de esa tangente.</p>
+<p><strong>Ejemplos en software:</strong> (1) en el método de Newton-Raphson se usa la tangente de f en un punto para encontrar la siguiente aproximación de una raíz — es la base de funciones como <span class="mate">sqrt()</span> en muchas librerías numéricas; (2) en interpolación y curvas Bézier de las interfaces gráficas, las tangentes en los extremos controlan la suavidad con que una animación arranca y frena (los famosos <em>easing curves</em> de CSS).</p>
+
+<h4>Definición formal y su relación con el límite</h4>
+<p>La derivada <em>es</em> un límite: el límite del cociente de diferencias cuando el incremento h tiende a cero (Stewart, 2018). Por eso primero estudiamos límites en el Portafolio I — sin límite no hay derivada.</p>
+<div class="formulas">
+  <span>f′(a) = lím (h→0) [f(a+h) − f(a)] / h</span>
+  <span>f′(a) = lím (x→a) [f(x) − f(a)] / (x − a)</span>
+</div>
+<p>La pendiente de la secante es [f(a+h) − f(a)]/h; al tomar el límite h→0, el punto Q se funde con P y la secante se convierte en tangente. Si ese límite existe, la función es <strong>derivable</strong> en a (y entonces también es continua ahí).</p>
+
+<h4>Propiedades de derivación que necesito saber ⭐</h4>
+<ul>
+  <li><strong>Constante:</strong> (k)′ = 0</li>
+  <li><strong>Potencia:</strong> (xⁿ)′ = n·xⁿ⁻¹ → (x³)′ = 3x²</li>
+  <li><strong>Constante por función:</strong> (k·f)′ = k·f′ → (5x²)′ = 10x</li>
+  <li><strong>Suma y resta:</strong> (f ± g)′ = f′ ± g′</li>
+  <li><strong>Producto:</strong> (f·g)′ = f′g + fg′ → (x·sen x)′ = sen x + x cos x</li>
+  <li><strong>Cociente:</strong> (f/g)′ = (f′g − fg′)/g² → (x/(x+1))′ = 1/(x+1)²</li>
+  <li><strong>Cadena:</strong> [f(g(x))]′ = f′(g(x))·g′(x) → (sen(x²))′ = 2x cos(x²)</li>
+  <li><strong>Trigonométricas:</strong> (sen x)′ = cos x · (cos x)′ = −sen x</li>
+</ul>
+<p><strong>¿Para qué sirven?</strong> Evitan calcular el límite de la definición cada vez: descomponen cualquier función complicada en piezas con derivada conocida. Es como tener funciones ya probadas en una librería en vez de reescribir el algoritmo desde cero. ✨</p>
+
+<hr class="suave">
+<h4>🖼️ Infografía de la semana</h4>
+<div class="infografia">
+  <h4 class="info-titulo">🌸 La derivada: de la secante a la tangente 🌸</h4>
+  <p class="info-sub">El cambio instantáneo, explicado bonito</p>
+  <div class="info-grid">
+    <div class="info-card"><span class="emo">📏</span>
+      <h5>¿Qué es?</h5>
+      <ul><li>Razón de cambio instantánea</li><li>Pendiente de la recta tangente</li><li>f′(a) = lím (h→0) [f(a+h)−f(a)]/h</li></ul>
+    </div>
+    <div class="info-card"><span class="emo">🎯</span>
+      <h5>Secante → Tangente</h5>
+      <ul><li>Secante: corta en P y Q</li><li>Q se acerca a P por la curva</li><li>La posición límite es la tangente</li></ul>
+    </div>
+    <div class="info-card"><span class="emo">⭐</span>
+      <h5>Reglas estrella</h5>
+      <ul><li>(xⁿ)′ = n·xⁿ⁻¹</li><li>(f·g)′ = f′g + fg′</li><li>(f/g)′ = (f′g − fg′)/g²</li></ul>
+    </div>
+    <div class="info-card"><span class="emo">💻</span>
+      <h5>En software</h5>
+      <ul><li>Gradiente en machine learning</li><li>Newton-Raphson para raíces</li><li>Curvas de easing en animaciones</li></ul>
+    </div>
+  </div>
+  <div class="info-pasos">
+    <span><b>1</b> Escribe el cociente [f(a+h)−f(a)]/h</span>
+    <span><b>2</b> Simplifica hasta cancelar la h</span>
+    <span><b>3</b> Evalúa el límite h→0</span>
+    <span><b>4</b> ¡Esa es la pendiente! ✨</span>
+  </div>
+</div>
+
+<div class="lab">
+  <h4>🧪 Explora: la secante que se vuelve tangente</h4>
+  <p style="font-size:.92rem">Sobre <span class="mate">y = x² + 1</span>, mueve el punto Q hacia P(1, 2). Mira cómo la pendiente de la secante se acerca a <strong>2</strong>, la pendiente de la tangente. 💗</p>
+  <svg class="grafica" id="svgSecante" viewBox="0 0 460 300" role="img" aria-label="Gráfica de y = x al cuadrado más uno con recta secante móvil"></svg>
+  <label for="sliderQ" style="font-weight:700;font-size:.9rem">Posición de Q (x)</label>
+  <input type="range" id="sliderQ" min="1.05" max="2.6" step="0.01" value="2.4">
+  <div class="lecturas">
+    <span>x de Q: <span id="qx">2.40</span></span>
+    <span>pendiente secante: <span id="msec">3.40</span></span>
+    <span>pendiente tangente: 2</span>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════ ACTIVIDAD 2 ═══════════ -->
+<div class="actividad lila">
+<h3 class="act">✏️ Actividad 2 · Ejercicios prácticos</h3>
+
+<details class="ejercicio" open>
+<summary>Ejercicio A · Revisión de conceptos</summary>
+<div>
+  <p class="paso"><b>1.</b> La recta que más se aproxima a una curva cerca del punto P es la <strong>recta tangente</strong> que pasa por ese punto.</p>
+  <p class="paso"><b>2.</b> Con mayor precisión, la recta tangente a una curva en P es la posición límite de las rectas <strong>secantes</strong> que pasan por P y Q cuando Q se aproxima a P a lo largo de la curva.</p>
+</div>
+</details>
+
+<details class="ejercicio">
+<summary>Ejercicio B · y = x² + 1: gráfica, tangente en (1, 2) y pendiente por límite</summary>
+<div>
+  <p class="paso"><b>1 y 2.</b> La gráfica es una parábola con vértice en (0, 1) que abre hacia arriba. La recta tangente en (1, 2) la dibujé en rosado:</p>
+  <svg class="grafica" id="svgParabola" viewBox="0 0 460 300" role="img" aria-label="Parábola y igual x al cuadrado más 1 con su recta tangente en el punto uno coma dos"></svg>
+  <figcaption>Figura 1 · y = x² + 1 con su tangente y = 2x en el punto (1, 2)</figcaption>
+  <p class="paso"><b>3. Pendiente por el proceso de límite.</b></p>
+  <p class="paso"><b>Paso 1.</b> Cociente de diferencias en a = 1: <span class="mate">[f(1+h) − f(1)] / h</span></p>
+  <p class="paso"><b>Paso 2.</b> f(1+h) = (1+h)² + 1 = 1 + 2h + h² + 1 = 2 + 2h + h², y f(1) = 2.</p>
+  <p class="paso"><b>Paso 3.</b> <span class="mate">(2 + 2h + h² − 2)/h = (2h + h²)/h = 2 + h</span></p>
+  <p class="paso"><b>Paso 4.</b> <span class="mate">lím (h→0) (2 + h) = 2</span></p>
+  <span class="resultado">m = 2 · tangente: y − 2 = 2(x − 1) → y = 2x</span>
+</div>
+</details>
+
+<details class="ejercicio">
+<summary>Ejercicio C · Pendientes de y = x² − 1 en x = −2 y x = 1</summary>
+<div>
+  <p class="paso"><b>Paso 1.</b> Pendiente general por límite en un punto a: <span class="mate">lím (h→0) [(a+h)² − 1 − (a² − 1)]/h = lím (h→0) (2ah + h²)/h = 2a</span></p>
+  <p class="paso"><b>Paso 2.</b> En x = −2: m = 2(−2) = −4 (la curva baja). En x = 1: m = 2(1) = 2 (la curva sube).</p>
+  <span class="resultado">m(−2) = −4 · m(1) = 2</span>
+</div>
+</details>
+
+<details class="ejercicio">
+<summary>Ejercicio D · Cuerpo que cae: s(t) = 16t² pies 🍎</summary>
+<div>
+  <p class="paso"><b>1. Caída entre t = 0 y t = 1:</b> s(1) − s(0) = 16(1) − 0</p>
+  <span class="resultado">16 pies</span>
+  <p class="paso"><b>2. Caída entre t = 1 y t = 2:</b> s(2) − s(1) = 16(4) − 16(1) = 64 − 16</p>
+  <span class="resultado">48 pies</span>
+  <p class="paso"><b>3. Velocidad promedio en 2 ≤ t ≤ 3:</b> [s(3) − s(2)]/(3 − 2) = (144 − 64)/1</p>
+  <span class="resultado">80 pies/s</span>
+  <p class="paso"><b>4. Velocidad promedio en 3 ≤ t ≤ 3.01:</b> [s(3.01) − s(3)]/0.01 = [16(9.0601) − 144]/0.01 = (144.9616 − 144)/0.01</p>
+  <span class="resultado">96.16 pies/s</span>
+  <p class="paso"><b>5. Velocidad instantánea en t = 3</b> (¡el límite de las velocidades promedio!):</p>
+  <p class="paso"><span class="mate">v(3) = lím (h→0) [16(3+h)² − 144]/h = lím (h→0) (96h + 16h²)/h = lím (h→0) (96 + 16h) = 96</span></p>
+  <span class="resultado">v(3) = 96 pies/s</span>
+  <p class="paso">💡 Nótese cómo la velocidad promedio del intervalo chiquitito [3, 3.01] (96.16) ya casi coincide con la instantánea (96): la derivada es exactamente ese límite.</p>
+</div>
+</details>
+</div>
+
+<!-- ═══════════ ACTIVIDAD 3 ═══════════ -->
+<div class="actividad menta">
+<h3 class="act">🪞 Actividad 3 · Autoevaluación AI-Mirror</h3>
+<div class="mirror-grid">
+  <div class="mirror-card"><h4>💭 ¿Qué aprendí?</h4>
+    <p>Qué es una derivada, cómo nace de la recta secante que se convierte en tangente, y su definición formal como límite del cociente de diferencias.</p></div>
+  <div class="mirror-card"><h4>🌱 ¿Cómo lo aprendí?</h4>
+    <p>Conversando con la IA sobre el concepto, redactando las ideas con mis palabras y calculando pendientes por el proceso de límite en los ejercicios, sin usar todavía las reglas rápidas.</p></div>
+  <div class="mirror-card"><h4>🛠️ ¿Cómo lo aplico?</h4>
+    <p>Interpretando la derivada como razón de cambio: velocidad de un objeto, crecimiento del uso de recursos de un servidor o el gradiente que guía el entrenamiento de un modelo.</p></div>
+  <div class="mirror-card"><h4>⭐ ¿Para qué me sirvió?</h4>
+    <p>Para entender que la derivada no es una fórmula suelta sino un límite con significado geométrico, base de todas las reglas que vienen en las próximas semanas.</p></div>
+</div>
+</div>
+
+<div class="pager">
+  <a href="index.html">← Portada</a>
+  <a href="semana6.html">Semana 6 →</a>
+</div>
+</section>
+
+<footer>🌸 Semana 5 · Portafolio II: Derivadas · Alison Yeung Vásquez ✨</footer>
+</div>
+
+<script>
+// ── mini plotter ──────────────────────────────
+function ejes(svg, xmin, xmax, ymin, ymax){
+  const W = 460, H = 300, pad = 30;
+  const sx = x => pad + (x - xmin) / (xmax - xmin) * (W - 2*pad);
+  const sy = y => H - pad - (y - ymin) / (ymax - ymin) * (H - 2*pad);
+  let g = '';
+  g += `<line x1="${sx(xmin)}" y1="${sy(0)}" x2="${sx(xmax)}" y2="${sy(0)}" stroke="#d9c6f2" stroke-width="1.5"/>`;
+  g += `<line x1="${sx(0)}" y1="${sy(ymin)}" x2="${sx(0)}" y2="${sy(ymax)}" stroke="#d9c6f2" stroke-width="1.5"/>`;
+  return {sx, sy, g};
+}
+function curva(f, sx, sy, xmin, xmax, color, n=140){
+  let d = '';
+  for(let i=0;i<=n;i++){
+    const x = xmin + (xmax-xmin)*i/n, y = f(x);
+    d += (i? 'L':'M') + sx(x).toFixed(1) + ' ' + sy(y).toFixed(1) + ' ';
+  }
+  return `<path d="${d}" fill="none" stroke="${color}" stroke-width="2.5"/>`;
+}
+
+// Ejercicio B: parábola con tangente fija
+(function(){
+  const svg = document.getElementById('svgParabola');
+  const {sx, sy, g} = ejes(svg, -3, 3, -1, 8);
+  const f = x => x*x + 1;
+  let s = g + curva(f, sx, sy, -3, 3, '#e56b9f');
+  s += `<line x1="${sx(-0.5)}" y1="${sy(-1)}" x2="${sx(3)}" y2="${sy(6)}" stroke="#8e6bb8" stroke-width="2" stroke-dasharray="6 4"/>`;
+  s += `<circle cx="${sx(1)}" cy="${sy(2)}" r="5" fill="#c2447f"/>`;
+  s += `<text x="${sx(1)+8}" y="${sy(2)-8}" font-size="13" fill="#5a3d5c" font-weight="700">P(1, 2)</text>`;
+  svg.innerHTML = s;
+})();
+
+// Lab: secante móvil
+(function(){
+  const svg = document.getElementById('svgSecante');
+  const slider = document.getElementById('sliderQ');
+  const f = x => x*x + 1;
+  function draw(){
+    const q = parseFloat(slider.value);
+    const {sx, sy, g} = ejes(svg, -0.5, 3, 0, 9);
+    const m = (f(q) - f(1)) / (q - 1);
+    let s = g + curva(f, sx, sy, -0.5, 3, '#e56b9f');
+    // secante (a través de P(1,2) con pendiente m)
+    const y1 = 2 + m*(-0.5 - 1), y2 = 2 + m*(3 - 1);
+    s += `<line x1="${sx(-0.5)}" y1="${sy(y1)}" x2="${sx(3)}" y2="${sy(y2)}" stroke="#8e6bb8" stroke-width="2"/>`;
+    s += `<circle cx="${sx(1)}" cy="${sy(2)}" r="5" fill="#c2447f"/>`;
+    s += `<circle cx="${sx(q)}" cy="${sy(f(q))}" r="6" fill="#9fd8c5" stroke="#5a9e88" stroke-width="2"/>`;
+    s += `<text x="${sx(1)-4}" y="${sy(2)+18}" font-size="12" fill="#5a3d5c" font-weight="700">P</text>`;
+    s += `<text x="${sx(q)+8}" y="${sy(f(q))}" font-size="12" fill="#5a3d5c" font-weight="700">Q</text>`;
+    svg.innerHTML = s;
+    document.getElementById('qx').textContent = q.toFixed(2);
+    document.getElementById('msec').textContent = m.toFixed(2);
+  }
+  slider.addEventListener('input', draw);
+  draw();
+})();
+</script>
+</body>
+</html>

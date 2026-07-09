@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semana 8 · L’Hôpital, optimización y gráficas ♡ Portafolio II</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="sparkles">🍑</div>
+  <div class="eyebrow">✿ Portafolio II · Derivadas ✿</div>
+  <h1 class="titulo">Semana 8</h1>
+  <p class="subtitulo">Regla de L’Hôpital, optimización y gráficas con la 1.ª y 2.ª derivada</p>
+  <nav class="migas">
+    <a href="index.html">🏠 Portada</a>
+    <a href="semana5.html">🌸 Semana 5</a>
+    <a href="semana6.html">🔮 Semana 6</a>
+    <a href="semana7.html">🍃 Semana 7</a>
+    <a href="semana8.html" aria-current="page">🍑 Semana 8</a>
+  </nav>
+</header>
+
+<section class="semana">
+
+<!-- ═══════════ ACTIVIDAD 1 ═══════════ -->
+<div class="actividad">
+<h3 class="act">💬 Actividad 1 · Interacción con DiálogoX</h3>
+
+<h4>La regla de L’Hôpital 🏥</h4>
+<p>Sirve para resolver límites con formas indeterminadas <strong>0/0</strong> o <strong>∞/∞</strong>: si el límite de f/g da una de esas formas, entonces <span class="mate">lím f(x)/g(x) = lím f′(x)/g′(x)</span>, siempre que ese segundo límite exista (Stewart, 2018). Es decir, en vez de pelear con el álgebra, comparo las <em>velocidades</em> con que numerador y denominador se acercan a cero o al infinito. Es importante porque resuelve en una línea límites que por factorización serían larguísimos o imposibles, y porque formaliza comparaciones de crecimiento que uso en análisis de algoritmos (¿ln n crece más lento que n? ¡L’Hôpital lo demuestra!).</p>
+<p><strong>Tres ejemplos:</strong></p>
+<ul>
+  <li><span class="mate">lím (x→0) sen x/x</span> → 0/0 → <span class="mate">lím cos x/1 = 1</span> (¡el límite notable de la semana 3, ahora en una línea!)</li>
+  <li><span class="mate">lím (x→∞) ln x/x</span> → ∞/∞ → <span class="mate">lím (1/x)/1 = 0</span> → el logaritmo pierde contra la lineal: por eso O(log n) es mejor que O(n) 💻</li>
+  <li><span class="mate">lím (x→0) (eˣ − 1)/x</span> → 0/0 → <span class="mate">lím eˣ/1 = 1</span></li>
+</ul>
+<p>⚠️ Solo se aplica si <em>hay</em> indeterminación 0/0 o ∞/∞; si no, se evalúa directo. Y a veces hay que aplicarla dos veces seguidas.</p>
+
+<h4>Problemas de optimización 🎯</h4>
+<p>Buscan el valor máximo o mínimo de una cantidad sujeta a una restricción: minimizar material, costo o tiempo, o maximizar área o ganancia. Son importantes porque casi toda decisión de ingeniería es una optimización disfrazada. Mi paso a paso, con un ejemplo de software:</p>
+<ul>
+  <li><b>1. Modelar:</b> quiero minimizar el <strong>costo por hora</strong> de un servicio en la nube. Con x réplicas del servidor, el costo es C(x) = 2x (cómputo) + 128/x (penalización por latencia/reintentos cuando hay pocas réplicas).</li>
+  <li><b>2. Derivar:</b> C′(x) = 2 − 128/x².</li>
+  <li><b>3. Puntos críticos:</b> 2 − 128/x² = 0 → x² = 64 → x = 8.</li>
+  <li><b>4. Clasificar:</b> C′′(x) = 256/x³ &gt; 0 → es un mínimo. ✓</li>
+  <li><b>5. Responder:</b> con 8 réplicas el costo por hora es mínimo: C(8) = 16 + 16 = 32.</li>
+</ul>
+
+<h4>Criterios de la primera y la segunda derivada 📈</h4>
+<p><strong>Primera derivada:</strong> donde f′ &gt; 0 la función sube; donde f′ &lt; 0 baja. Si en un punto crítico f′ cambia de + a −, hay máximo local; de − a +, mínimo local. <strong>Segunda derivada:</strong> f′′ &gt; 0 → cóncava hacia arriba (☕ sonrisa); f′′ &lt; 0 → cóncava hacia abajo; donde f′′ cambia de signo hay punto de inflexión. También clasifica críticos: si f′(c) = 0 y f′′(c) &gt; 0, mínimo; si f′′(c) &lt; 0, máximo (Larson y Edwards, 2017). Juntos permiten <strong>graficar una función sin tabular puntos a ciegas</strong>: sé dónde sube, dónde se curva y dónde están sus picos.</p>
+<p><strong>Ejemplo completo:</strong> f(x) = x³ − 3x. f′ = 3x² − 3 = 3(x−1)(x+1) → críticos x = ±1. f′′ = 6x → f′′(−1) = −6 &lt; 0: máximo en (−1, 2); f′′(1) = 6 &gt; 0: mínimo en (1, −2); inflexión en (0, 0). La gráfica queda así:</p>
+<svg class="grafica" id="svgEjemplo" viewBox="0 0 460 300" role="img" aria-label="Gráfica de x al cubo menos tres x con su máximo, mínimo y punto de inflexión"></svg>
+<figcaption>Figura 1 · f(x) = x³ − 3x: máximo (−1, 2) 💗, inflexión (0, 0) ⭐ y mínimo (1, −2) 💜</figcaption>
+
+<hr class="suave">
+<h4>🖼️ Infografía de la semana</h4>
+<div class="infografia">
+  <h4 class="info-titulo">🍑 Derivadas en acción 🍑</h4>
+  <p class="info-sub">Tres superpoderes: L’Hôpital, optimizar y graficar</p>
+  <div class="info-grid">
+    <div class="info-card"><span class="emo">🏥</span>
+      <h5>L’Hôpital</h5>
+      <ul><li>Solo para 0/0 o ∞/∞</li><li>lím f/g = lím f′/g′</li><li>se puede aplicar varias veces</li></ul>
+    </div>
+    <div class="info-card"><span class="emo">🎯</span>
+      <h5>Optimización</h5>
+      <ul><li>Modelar → derivar → f′ = 0</li><li>clasificar con f′′</li><li>responder en contexto</li></ul>
+    </div>
+    <div class="info-card"><span class="emo">📈</span>
+      <h5>1.ª derivada</h5>
+      <ul><li>f′ &gt; 0 sube · f′ &lt; 0 baja</li><li>+ → − máximo</li><li>− → + mínimo</li></ul>
+    </div>
+    <div class="info-card"><span class="emo">🌙</span>
+      <h5>2.ª derivada</h5>
+      <ul><li>f′′ &gt; 0 cóncava ↑ ☕</li><li>f′′ &lt; 0 cóncava ↓ 🌂</li><li>cambio de signo = inflexión</li></ul>
+    </div>
+  </div>
+  <div class="info-pasos">
+    <span><b>1</b> Dominio y asíntotas</span>
+    <span><b>2</b> f′: críticos y monotonía</span>
+    <span><b>3</b> f′′: concavidad e inflexiones</span>
+    <span><b>4</b> ¡Dibuja con confianza! ✨</span>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════ ACTIVIDAD 2 ═══════════ -->
+<div class="actividad lila">
+<h3 class="act">✏️ Actividad 2 · Ejercicios prácticos</h3>
+<p class="mini-titulo">A · Gráficas con los principios de la 1.ª y 2.ª derivada</p>
+
+<details class="ejercicio" open>
+<summary>A.1 · f(x) = 8x⁵ − 5x⁴ − 20x³</summary>
+<div>
+  <p class="paso"><b>Paso 1 · f′:</b> f′(x) = 40x⁴ − 20x³ − 60x² = 20x²(2x² − x − 3) = <span class="mate">20x²(2x − 3)(x + 1)</span></p>
+  <p class="paso"><b>Paso 2 · Críticos:</b> x = −1, x = 0, x = 3/2.</p>
+  <p class="paso"><b>Paso 3 · Signos de f′:</b> (+) antes de −1 · (−) entre −1 y 0 · (−) entre 0 y 3/2 · (+) después de 3/2.</p>
+  <p class="paso"><b>Paso 4 · Clasificación:</b> en x = −1, f′ cambia + → −: <strong>máximo local (−1, 7)</strong>. En x = 3/2, cambia − → +: <strong>mínimo local (1.5, −32.06)</strong>. En x = 0 no hay cambio de signo: solo tangente horizontal.</p>
+  <p class="paso"><b>Paso 5 · f′′:</b> f′′(x) = 160x³ − 60x² − 120x = 20x(8x² − 3x − 6). Cambia de signo en x = 0 y en x = (3 ± √201)/16 ≈ −0.70 y 1.07: <strong>tres puntos de inflexión</strong>.</p>
+  <svg class="grafica" id="svgA1" viewBox="0 0 460 300" role="img" aria-label="Gráfica del polinomio de grado cinco con su máximo y mínimo locales"></svg>
+  <figcaption>Figura 2 · Máximo 💗 en (−1, 7), mínimo 💜 en (1.5, −32.06), tangente horizontal en x = 0</figcaption>
+</div>
+</details>
+
+<details class="ejercicio">
+<summary>A.2 · f(x) = 5x⁶ − 24x⁴ + 30x⁴</summary>
+<div>
+  <p class="paso">✏️ Primero combino los términos semejantes tal como aparece la función: −24x⁴ + 30x⁴ = 6x⁴, así que <span class="mate">f(x) = 5x⁶ + 6x⁴</span>.</p>
+  <p class="paso"><b>Paso 1 · f′:</b> f′(x) = 30x⁵ + 24x³ = <span class="mate">6x³(5x² + 4)</span>. Como 5x² + 4 &gt; 0 siempre, el signo de f′ es el signo de x³.</p>
+  <p class="paso"><b>Paso 2 · Monotonía:</b> f′ &lt; 0 si x &lt; 0 (baja) y f′ &gt; 0 si x &gt; 0 (sube) → <strong>mínimo absoluto en (0, 0)</strong>.</p>
+  <p class="paso"><b>Paso 3 · f′′:</b> f′′(x) = 150x⁴ + 72x² ≥ 0 para todo x → <strong>cóncava hacia arriba en todo ℝ, sin puntos de inflexión</strong> (f′′(0) = 0 pero no cambia de signo).</p>
+  <svg class="grafica" id="svgA2" viewBox="0 0 460 300" role="img" aria-label="Gráfica de cinco x a la sexta más seis x a la cuarta con mínimo en el origen"></svg>
+  <figcaption>Figura 3 · Función par, siempre cóncava hacia arriba, con mínimo 💜 en el origen</figcaption>
+</div>
+</details>
+
+<details class="ejercicio">
+<summary>A.3 · f(x) = x²/(x − 1)</summary>
+<div>
+  <p class="paso"><b>Paso 1 · Dominio y asíntotas:</b> x ≠ 1. Asíntota vertical x = 1; al dividir, f(x) = x + 1 + 1/(x − 1) → <strong>asíntota oblicua y = x + 1</strong>.</p>
+  <p class="paso"><b>Paso 2 · f′:</b> por cociente, f′(x) = (x² − 2x)/(x − 1)² = <span class="mate">x(x − 2)/(x − 1)²</span>. Críticos: x = 0 y x = 2.</p>
+  <p class="paso"><b>Paso 3 · Signos:</b> (+) x &lt; 0 · (−) 0 &lt; x &lt; 1 · (−) 1 &lt; x &lt; 2 · (+) x &gt; 2 → <strong>máximo local (0, 0)</strong> y <strong>mínimo local (2, 4)</strong>.</p>
+  <p class="paso"><b>Paso 4 · f′′:</b> usando f = x + 1 + (x−1)⁻¹: f′′(x) = <span class="mate">2/(x − 1)³</span> → cóncava ↓ si x &lt; 1, cóncava ↑ si x &gt; 1. No hay inflexión (x = 1 no está en el dominio).</p>
+  <svg class="grafica" id="svgA3" viewBox="0 0 460 300" role="img" aria-label="Gráfica de x cuadrado entre x menos uno con asíntota vertical en uno"></svg>
+  <figcaption>Figura 4 · Asíntota vertical x = 1 (punteada), máximo 💗 en (0, 0), mínimo 💜 en (2, 4)</figcaption>
+</div>
+</details>
+
+<details class="ejercicio">
+<summary>A.4 · f(x) = 3/(x + 2)²</summary>
+<div>
+  <p class="paso"><b>Paso 1 · Dominio y asíntotas:</b> x ≠ −2. Vertical x = −2; horizontal y = 0 (el denominador crece sin cota).</p>
+  <p class="paso"><b>Paso 2 · f′:</b> f = 3(x + 2)⁻² → f′(x) = <span class="mate">−6/(x + 2)³</span>. Nunca es cero: <strong>no hay extremos</strong>.</p>
+  <p class="paso"><b>Paso 3 · Monotonía:</b> si x &lt; −2, (x+2)³ &lt; 0 y f′ &gt; 0 (sube); si x &gt; −2, f′ &lt; 0 (baja). La función "sube hacia" la asíntota y luego baja.</p>
+  <p class="paso"><b>Paso 4 · f′′:</b> f′′(x) = 18/(x + 2)⁴ &gt; 0 siempre → <strong>cóncava hacia arriba en todo el dominio</strong>, sin inflexiones.</p>
+  <svg class="grafica" id="svgA4" viewBox="0 0 460 300" role="img" aria-label="Gráfica de tres entre x más dos al cuadrado, siempre positiva con asíntota en menos dos"></svg>
+  <figcaption>Figura 5 · Siempre positiva y cóncava ↑, con asíntota vertical x = −2 y horizontal y = 0</figcaption>
+</div>
+</details>
+
+<details class="ejercicio">
+<summary>A.5 · f(x) = 1/(x² + x − 6)</summary>
+<div>
+  <p class="paso"><b>Paso 1 · Dominio y asíntotas:</b> x² + x − 6 = (x + 3)(x − 2) → verticales <strong>x = −3 y x = 2</strong>; horizontal y = 0.</p>
+  <p class="paso"><b>Paso 2 · f′:</b> f′(x) = <span class="mate">−(2x + 1)/(x² + x − 6)²</span>. Crítico: x = −1/2.</p>
+  <p class="paso"><b>Paso 3 · Signos:</b> el denominador al cuadrado es positivo, así que f′ &gt; 0 si x &lt; −1/2 y f′ &lt; 0 si x &gt; −1/2 → <strong>máximo local en (−0.5, −0.16)</strong> (¡un máximo con valor negativo, sobre la rama del medio!).</p>
+  <p class="paso"><b>Paso 4 · Concavidad:</b> en las ramas externas (x &lt; −3 y x &gt; 2) la función es positiva y cóncava ↑; en la rama central es negativa y cóncava ↓.</p>
+  <svg class="grafica" id="svgA5" viewBox="0 0 460 300" role="img" aria-label="Gráfica de uno entre x cuadrado más x menos seis con dos asíntotas verticales"></svg>
+  <figcaption>Figura 6 · Tres ramas separadas por las asíntotas x = −3 y x = 2; máximo 💗 en (−0.5, −0.16)</figcaption>
+</div>
+</details>
+
+<p class="mini-titulo">B · Problemas de optimización</p>
+
+<details class="ejercicio">
+<summary>B.1 · La hoja de papel con márgenes 📄</summary>
+<div>
+  <p class="paso"><b>Paso 1 · Modelar:</b> sea x el ancho y y el alto del área impresa, con xy = 24 → y = 24/x. La hoja completa mide (x + 2) de ancho (1 cm por lado) y (y + 3) de alto (1.5 cm arriba y abajo).</p>
+  <p class="paso"><b>Paso 2 · Función a minimizar:</b> A(x) = (x + 2)(24/x + 3) = 24 + 3x + 48/x + 6 = <span class="mate">30 + 3x + 48/x</span></p>
+  <p class="paso"><b>Paso 3 · Derivar e igualar a cero:</b> A′(x) = 3 − 48/x² = 0 → x² = 16 → x = 4 (solo el positivo tiene sentido).</p>
+  <p class="paso"><b>Paso 4 · Clasificar:</b> A′′(x) = 96/x³ &gt; 0 → mínimo. ✓ Entonces y = 24/4 = 6.</p>
+  <p class="paso"><b>Paso 5 · Responder:</b> hoja de ancho 4 + 2 = 6 cm y alto 6 + 3 = 9 cm.</p>
+  <span class="resultado">Hoja de 6 cm × 9 cm (área mínima: 54 cm²)</span>
+</div>
+</details>
+
+<details class="ejercicio">
+<summary>B.2 · Dos números positivos con producto 288 🔢</summary>
+<div>
+  <p class="paso"><b>Paso 1 · Modelar:</b> xy = 288 y quiero minimizar S = 2x + y. Despejo y = 288/x.</p>
+  <p class="paso"><b>Paso 2 · Función:</b> S(x) = <span class="mate">2x + 288/x</span></p>
+  <p class="paso"><b>Paso 3 · Derivar:</b> S′(x) = 2 − 288/x² = 0 → x² = 144 → x = 12.</p>
+  <p class="paso"><b>Paso 4 · Clasificar:</b> S′′(x) = 576/x³ &gt; 0 → mínimo. ✓ Entonces y = 288/12 = 24.</p>
+  <span class="resultado">Los números son 12 y 24 (suma mínima: 2·12 + 24 = 48)</span>
+</div>
+</details>
+
+<details class="ejercicio">
+<summary>B.3 · El cuarto de base cuadrada más barato 🏠</summary>
+<div>
+  <p class="paso"><b>Paso 1 · Modelar:</b> base cuadrada de lado x y altura h, con volumen x²h = 1000 → h = 1000/x².</p>
+  <p class="paso"><b>Paso 2 · Costo:</b> techo + piso = 2 caras de x² a ₡2000: 4000x². Paredes = 4 caras de xh a ₡1800: 7200xh.</p>
+  <p class="paso">C(x) = 4000x² + 7200x·(1000/x²) = <span class="mate">4000x² + 7 200 000/x</span></p>
+  <p class="paso"><b>Paso 3 · Derivar:</b> C′(x) = 8000x − 7 200 000/x² = 0 → x³ = 900 → x = ∛900 ≈ 9.65 m.</p>
+  <p class="paso"><b>Paso 4 · Clasificar:</b> C′′(x) = 8000 + 14 400 000/x³ &gt; 0 → mínimo. ✓</p>
+  <p class="paso"><b>Paso 5 · Responder:</b> h = 1000/(∛900)² ≈ 10.73 m.</p>
+  <span class="resultado">Base de ∛900 ≈ 9.65 m por lado y altura ≈ 10.73 m (costo ≈ ₡1 118 689)</span>
+</div>
+</details>
+</div>
+
+<!-- ═══════════ ACTIVIDAD 3 ═══════════ -->
+<div class="actividad menta">
+<h3 class="act">🪞 Actividad 3 · Autoevaluación AI-Mirror</h3>
+<div class="mirror-grid">
+  <div class="mirror-card"><h4>💭 ¿Qué aprendí?</h4>
+    <p>A resolver indeterminaciones con L’Hôpital, a plantear y resolver problemas de optimización con restricciones, y a graficar funciones usando los criterios de la primera y segunda derivada.</p></div>
+  <div class="mirror-card"><h4>🌱 ¿Cómo lo aprendí?</h4>
+    <p>Siguiendo un método fijo para cada gráfica (dominio → f′ → f′′ → asíntotas) y verificando mis trazos con las gráficas que construí en la página, además de la práctica guiada con la IA.</p></div>
+  <div class="mirror-card"><h4>🛠️ ¿Cómo lo aplico?</h4>
+    <p>En comparaciones de crecimiento de algoritmos (ln n vs n vía L’Hôpital) y en decisiones de recursos, como encontrar el número de réplicas que minimiza el costo de un servicio.</p></div>
+  <div class="mirror-card"><h4>⭐ ¿Para qué me sirvió?</h4>
+    <p>Para cerrar el módulo de derivadas viendo que no son solo reglas: son una herramienta para decidir, predecir y dibujar el comportamiento completo de una función.</p></div>
+</div>
+</div>
+
+<div class="pager">
+  <a href="semana7.html">← Semana 7</a>
+  <a href="index.html">Portada →</a>
+</div>
+</section>
+
+<footer>🍑 Semana 8 · Portafolio II: Derivadas · Alison Yeung Vásquez ✨</footer>
+</div>
+
+<script>
+// mini plotter con manejo de asíntotas 💕
+function plot(id, f, xmin, xmax, ymin, ymax, extras){
+  const W = 460, H = 300, pad = 30;
+  const svg = document.getElementById(id);
+  const sx = x => pad + (x - xmin)/(xmax - xmin)*(W - 2*pad);
+  const sy = y => H - pad - (y - ymin)/(ymax - ymin)*(H - 2*pad);
+  let s = '';
+  s += `<line x1="${sx(xmin)}" y1="${sy(0)}" x2="${sx(xmax)}" y2="${sy(0)}" stroke="#d9c6f2" stroke-width="1.5"/>`;
+  if (xmin < 0 && xmax > 0)
+    s += `<line x1="${sx(0)}" y1="${sy(ymin)}" x2="${sx(0)}" y2="${sy(ymax)}" stroke="#d9c6f2" stroke-width="1.5"/>`;
+  (extras && extras.va || []).forEach(v => {
+    s += `<line x1="${sx(v)}" y1="${sy(ymin)}" x2="${sx(v)}" y2="${sy(ymax)}" stroke="#e56b9f" stroke-width="1.5" stroke-dasharray="5 5" opacity=".6"/>`;
+  });
+  if (extras && extras.oblicua){
+    const [m,b] = extras.oblicua;
+    s += `<line x1="${sx(xmin)}" y1="${sy(m*xmin+b)}" x2="${sx(xmax)}" y2="${sy(m*xmax+b)}" stroke="#9fd8c5" stroke-width="1.5" stroke-dasharray="5 5"/>`;
+  }
+  let d = '', pen = false;
+  const n = 400;
+  for(let i=0;i<=n;i++){
+    const x = xmin + (xmax - xmin)*i/n, y = f(x);
+    if (!isFinite(y) || y > ymax*1.5 || y < ymin*1.5){ pen = false; continue; }
+    const yc = Math.max(ymin, Math.min(ymax, y));
+    d += (pen ? 'L' : 'M') + sx(x).toFixed(1) + ' ' + sy(yc).toFixed(1) + ' ';
+    pen = true;
+  }
+  s += `<path d="${d}" fill="none" stroke="#c2447f" stroke-width="2.5"/>`;
+  (extras && extras.puntos || []).forEach(p => {
+    s += `<circle cx="${sx(p[0])}" cy="${sy(p[1])}" r="5" fill="${p[2]||'#8e6bb8'}" stroke="#fff" stroke-width="1.5"/>`;
+    if (p[3]) s += `<text x="${sx(p[0])+8}" y="${sy(p[1])-8}" font-size="12" font-weight="700" fill="#5a3d5c">${p[3]}</text>`;
+  });
+  svg.innerHTML = s;
+}
+
+// Ejemplo Actividad 1: x³ − 3x
+plot('svgEjemplo', x => x*x*x - 3*x, -2.6, 2.6, -4, 4,
+  {puntos: [[-1, 2, '#e56b9f', 'máx (−1,2)'], [0, 0, '#f7c873', 'inflexión'], [1, -2, '#8e6bb8', 'mín (1,−2)']]});
+
+// A1: 8x⁵ − 5x⁴ − 20x³
+plot('svgA1', x => 8*x**5 - 5*x**4 - 20*x**3, -1.8, 2.1, -45, 25,
+  {puntos: [[-1, 7, '#e56b9f', 'máx (−1,7)'], [1.5, -32.06, '#8e6bb8', 'mín (1.5,−32.1)'], [0, 0, '#f7c873', 'tang. horizontal']]});
+
+// A2: 5x⁶ + 6x⁴
+plot('svgA2', x => 5*x**6 + 6*x**4, -1.5, 1.5, -2, 30,
+  {puntos: [[0, 0, '#8e6bb8', 'mín (0,0)']]});
+
+// A3: x²/(x−1)
+plot('svgA3', x => x*x/(x-1), -5, 7, -8, 12,
+  {va: [1], oblicua: [1, 1],
+   puntos: [[0, 0, '#e56b9f', 'máx (0,0)'], [2, 4, '#8e6bb8', 'mín (2,4)']]});
+
+// A4: 3/(x+2)²
+plot('svgA4', x => 3/((x+2)*(x+2)), -7, 3, -0.5, 8, {va: [-2]});
+
+// A5: 1/(x²+x−6)
+plot('svgA5', x => 1/(x*x + x - 6), -7, 6, -1.2, 1.2,
+  {va: [-3, 2], puntos: [[-0.5, -0.16, '#e56b9f', 'máx (−0.5,−0.16)']]});
+</script>
+</body>
+</html>

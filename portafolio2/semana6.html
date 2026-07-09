@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semana 6 · Propiedades de derivación ♡ Portafolio II</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="sparkles">🔮</div>
+  <div class="eyebrow">✿ Portafolio II · Derivadas ✿</div>
+  <h1 class="titulo">Semana 6</h1>
+  <p class="subtitulo">Propiedades de derivación: potencia, producto, cociente y trigonométricas</p>
+  <nav class="migas">
+    <a href="index.html">🏠 Portada</a>
+    <a href="semana5.html">🌸 Semana 5</a>
+    <a href="semana6.html" aria-current="page">🔮 Semana 6</a>
+    <a href="semana7.html">🍃 Semana 7</a>
+    <a href="semana8.html">🍑 Semana 8</a>
+  </nav>
+</header>
+
+<section class="semana">
+
+<!-- ═══════════ ACTIVIDAD 1 ═══════════ -->
+<div class="actividad">
+<h3 class="act">💬 Actividad 1 · Interacción con DiálogoX</h3>
+
+<h4>Propiedades básicas de derivación</h4>
+<p>Son las reglas que resuelven la mayoría de las derivadas del día a día (Larson y Edwards, 2017):</p>
+<div class="formulas">
+  <span>(k)′ = 0</span>
+  <span>(x)′ = 1</span>
+  <span>(xⁿ)′ = n·xⁿ⁻¹</span>
+  <span>(k·f)′ = k·f′</span>
+  <span>(f ± g)′ = f′ ± g′</span>
+</div>
+<p>Con solo estas cinco ya se deriva cualquier polinomio término a término, como recorrer un arreglo aplicando la misma operación a cada elemento. ✨</p>
+
+<h4>Propiedades avanzadas</h4>
+<p>Entran cuando la función combina piezas multiplicándose, dividiéndose o anidándose (Stewart, 2018):</p>
+<div class="formulas">
+  <span>Producto: (f·g)′ = f′g + fg′</span>
+  <span>Cociente: (f/g)′ = (f′g − fg′)/g²</span>
+  <span>Cadena: [f(g(x))]′ = f′(g(x))·g′(x)</span>
+</div>
+<div class="formulas">
+  <span>(sen x)′ = cos x</span>
+  <span>(cos x)′ = −sen x</span>
+  <span>(tan x)′ = sec²x</span>
+  <span>(sec x)′ = sec x tan x</span>
+  <span>(csc x)′ = −csc x cot x</span>
+  <span>(cot x)′ = −csc²x</span>
+</div>
+
+<h4>¿Cuándo uso cada una? Mi paso a paso 🧭</h4>
+<ul>
+  <li><b>1.</b> ¿Es suma o resta de términos? → derivo <strong>término por término</strong>.</li>
+  <li><b>2.</b> ¿Hay potencias negativas o raíces disfrazadas (1/x², √x)? → las reescribo como xⁿ y aplico <strong>la regla de la potencia</strong>.</li>
+  <li><b>3.</b> ¿Dos funciones multiplicándose (x⁴·sen x)? → <strong>regla del producto</strong>. Truco: la constante no cuenta como factor, solo sale afuera.</li>
+  <li><b>4.</b> ¿Una fracción con x arriba y abajo? → <strong>regla del cociente</strong>. Si el numerador es constante, a veces es más fácil reescribir como potencia negativa.</li>
+  <li><b>5.</b> ¿Función dentro de otra función? → <strong>regla de la cadena</strong> (la protagonista de la semana 7 💗).</li>
+  <li><b>6.</b> Al final: simplifico agrupando términos semejantes.</li>
+</ul>
+<p>La práctica de 20 preguntas que hice con la IA (10 básicas y 10 avanzadas, con paso a paso) la convertí en el <strong>tarjetero interactivo</strong> de abajo, para poder repasarla las veces que quiera. 🎴</p>
+
+<hr class="suave">
+<h4>🖼️ Infografía de la semana</h4>
+<div class="infografia">
+  <h4 class="info-titulo">🔮 Kit de reglas de derivación 🔮</h4>
+  <p class="info-sub">Qué regla usar y cuándo</p>
+  <div class="info-grid">
+    <div class="info-card"><span class="emo">🌸</span>
+      <h5>Básicas</h5>
+      <ul><li>(k)′ = 0 · las constantes mueren</li><li>(xⁿ)′ = n·xⁿ⁻¹ · baja y resta</li><li>(f ± g)′ = f′ ± g′ · pieza por pieza</li></ul>
+    </div>
+    <div class="info-card"><span class="emo">✖️</span>
+      <h5>Producto</h5>
+      <ul><li>(f·g)′ = f′g + fg′</li><li>"derivo la primera por la segunda, más la primera por la derivada de la segunda"</li></ul>
+    </div>
+    <div class="info-card"><span class="emo">➗</span>
+      <h5>Cociente</h5>
+      <ul><li>(f/g)′ = (f′g − fg′)/g²</li><li>¡el orden del numerador importa!</li><li>abajo siempre g²</li></ul>
+    </div>
+    <div class="info-card"><span class="emo">🌀</span>
+      <h5>Trigonométricas</h5>
+      <ul><li>sen → cos · cos → −sen</li><li>las "co" llevan signo −</li><li>sec y csc se derivan con el cociente</li></ul>
+    </div>
+  </div>
+  <div class="info-pasos">
+    <span><b>1</b> Reescribe raíces y fracciones como potencias</span>
+    <span><b>2</b> Identifica la estructura: suma, producto, cociente</span>
+    <span><b>3</b> Aplica la regla</span>
+    <span><b>4</b> Simplifica ✨</span>
+  </div>
+</div>
+
+<div class="tarjetero">
+  <h4 style="color:var(--lila-oscuro)">🎴 Modo práctica · ¡Voltea la tarjetita!</h4>
+  <p style="font-size:.9rem;color:var(--tinta-suave);font-weight:600">Las 20 preguntas de mi práctica con la IA: 10 básicas 🌸 y 10 avanzadas 🔮</p>
+  <button class="tarjeta" id="tarjeta" type="button" aria-label="Tarjeta de práctica, presiona para voltear">
+    <div class="tarjeta-inner" id="tarjetaInner">
+      <div class="cara frente">
+        <div class="pregunta" id="tPregunta"></div>
+        <div class="pista">toca para voltear 💕</div>
+      </div>
+      <div class="cara dorso">
+        <div class="respuesta" id="tRespuesta"></div>
+        <div class="metodo" id="tMetodo"></div>
+      </div>
+    </div>
+  </button>
+  <div class="tarjeta-controles">
+    <button class="botoncito lila" id="btnMezclar" type="button">🔀 Mezclar</button>
+    <span class="contadorcito" id="contador">1 / 20</span>
+    <button class="botoncito" id="btnSiguiente" type="button">Siguiente ➜</button>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════ ACTIVIDAD 2 ═══════════ -->
+<div class="actividad lila">
+<h3 class="act">✏️ Actividad 2 · Ejercicios prácticos</h3>
+
+<details class="ejercicio" open>
+<summary>Ejercicio A · Regla de la potencia (6 derivadas)</summary>
+<div>
+  <p class="paso"><b>1.</b> f(x) = x² → <span class="mate">f′(x) = 2x</span></p>
+  <p class="paso"><b>2.</b> f(x) = x³ → <span class="mate">f′(x) = 3x²</span></p>
+  <p class="paso"><b>3.</b> f(x) = −½x⁴ → −½·4x³ → <span class="mate">f′(x) = −2x³</span></p>
+  <p class="paso"><b>4.</b> f(x) = −3x⁻⁵ → −3·(−5)x⁻⁶ → <span class="mate">f′(x) = 15x⁻⁶</span></p>
+  <p class="paso"><b>5.</b> f(x) = −¾x⁻¹⁰ → −¾·(−10)x⁻¹¹ → <span class="mate">f′(x) = (15/2)x⁻¹¹</span></p>
+  <p class="paso"><b>6.</b> f(x) = 5x⁻⁵ → 5·(−5)x⁻⁶ → <span class="mate">f′(x) = −25x⁻⁶</span></p>
+</div>
+</details>
+
+<details class="ejercicio">
+<summary>Ejercicio B · Potencias, sumas y reescrituras (6 derivadas)</summary>
+<div>
+  <p class="paso"><b>1.</b> y = π/x = πx⁻¹ → <span class="mate">y′ = −πx⁻² = −π/x²</span> (π es solo una constante 💕)</p>
+  <p class="paso"><b>2.</b> y = −3x⁻⁴ → <span class="mate">y′ = 12x⁻⁵</span></p>
+  <p class="paso"><b>3.</b> y = x¹² + 5x⁻² − πx⁻¹⁰ → <span class="mate">y′ = 12x¹¹ − 10x⁻³ + 10πx⁻¹¹</span></p>
+  <p class="paso"><b>4.</b> y = 3x⁴ + x³ → <span class="mate">y′ = 12x³ + 3x²</span></p>
+  <p class="paso"><b>5.</b> y = 3/x³ + x⁻⁴ = 3x⁻³ + x⁻⁴ → <span class="mate">y′ = −9x⁻⁴ − 4x⁻⁵</span></p>
+  <p class="paso"><b>6.</b> y = 1/x − 1/x² = x⁻¹ − x⁻² → <span class="mate">y′ = −x⁻² + 2x⁻³ = −1/x² + 2/x³</span></p>
+</div>
+</details>
+
+<details class="ejercicio">
+<summary>Ejercicio C · Regla del producto (5 derivadas)</summary>
+<div>
+  <p class="paso"><b>1.</b> y = (x³ + 4)(x² + 1)</p>
+  <p class="paso">y′ = 3x²(x² + 1) + (x³ + 4)(2x) = 3x⁴ + 3x² + 2x⁴ + 8x</p>
+  <span class="resultado">y′ = 5x⁴ + 3x² + 8x</span>
+  <p class="paso"><b>2.</b> y = −x⁴·sen(x)</p>
+  <p class="paso">y′ = −4x³·sen(x) + (−x⁴)·cos(x)</p>
+  <span class="resultado">y′ = −4x³ sen(x) − x⁴ cos(x)</span>
+  <p class="paso"><b>3.</b> y = 5x⁶·cos(x)</p>
+  <p class="paso">y′ = 30x⁵·cos(x) + 5x⁶·(−sen(x))</p>
+  <span class="resultado">y′ = 30x⁵ cos(x) − 5x⁶ sen(x)</span>
+  <p class="paso"><b>4.</b> y = −3x⁹·(x³ − 1)</p>
+  <p class="paso">y′ = −27x⁸(x³ − 1) + (−3x⁹)(3x²) = −27x¹¹ + 27x⁸ − 9x¹¹</p>
+  <span class="resultado">y′ = −36x¹¹ + 27x⁸</span>
+  <p class="paso"><b>5.</b> y = (5x² − 7)(3x² − 1)</p>
+  <p class="paso">y′ = 10x(3x² − 1) + (5x² − 7)(6x) = 30x³ − 10x + 30x³ − 42x</p>
+  <span class="resultado">y′ = 60x³ − 52x</span>
+</div>
+</details>
+
+<details class="ejercicio">
+<summary>Ejercicio D · Regla del cociente (5 derivadas)</summary>
+<div>
+  <p class="paso"><b>1.</b> y = x²/(3x² + 1)</p>
+  <p class="paso">y′ = [2x(3x² + 1) − x²·6x]/(3x² + 1)² = (6x³ + 2x − 6x³)/(3x² + 1)²</p>
+  <span class="resultado">y′ = 2x/(3x² + 1)²</span>
+  <p class="paso"><b>2.</b> y = 2/(5x² − 1)</p>
+  <p class="paso">y′ = [0·(5x² − 1) − 2·10x]/(5x² − 1)²</p>
+  <span class="resultado">y′ = −20x/(5x² − 1)²</span>
+  <p class="paso"><b>3.</b> y = (x − 1)/(x + 1)</p>
+  <p class="paso">y′ = [1·(x + 1) − (x − 1)·1]/(x + 1)² = (x + 1 − x + 1)/(x + 1)²</p>
+  <span class="resultado">y′ = 2/(x + 1)²</span>
+  <p class="paso"><b>4.</b> y = (2x² − 1)/(3x + 5)</p>
+  <p class="paso">y′ = [4x(3x + 5) − (2x² − 1)·3]/(3x + 5)² = (12x² + 20x − 6x² + 3)/(3x + 5)²</p>
+  <span class="resultado">y′ = (6x² + 20x + 3)/(3x + 5)²</span>
+  <p class="paso"><b>5.</b> y = (5x − 4)/(3x² + 1)</p>
+  <p class="paso">y′ = [5(3x² + 1) − (5x − 4)·6x]/(3x² + 1)² = (15x² + 5 − 30x² + 24x)/(3x² + 1)²</p>
+  <span class="resultado">y′ = (−15x² + 24x + 5)/(3x² + 1)²</span>
+</div>
+</details>
+
+<details class="ejercicio">
+<summary>Ejercicio E · Derivación trigonométrica (7 derivadas)</summary>
+<div>
+  <p class="paso"><b>1.</b> f(x) = 2 sen(x) + 3 cos(x) → <span class="mate">f′(x) = 2 cos(x) − 3 sen(x)</span></p>
+  <p class="paso"><b>2.</b> f(x) = sec(x) = 1/cos(x). Por cociente: [0·cos x − 1·(−sen x)]/cos²x = sen x/cos²x = (1/cos x)(sen x/cos x)</p>
+  <span class="resultado">f′(x) = sec(x)·tan(x)</span>
+  <p class="paso"><b>3.</b> f(x) = sen²(x) = [sen x]². Por cadena: 2 sen(x)·cos(x)</p>
+  <span class="resultado">f′(x) = 2 sen(x) cos(x) = sen(2x)</span>
+  <p class="paso"><b>4.</b> f(x) = 1 − cos²(x). Derivada: 0 − 2cos(x)·(−sen(x)) = 2 sen(x) cos(x). 💡 Tiene sentido: por la identidad fundamental, 1 − cos²x = sen²x, ¡la misma función del punto 3!</p>
+  <span class="resultado">f′(x) = 2 sen(x) cos(x) = sen(2x)</span>
+  <p class="paso"><b>5.</b> f(x) = csc(x) = 1/sen(x). Por cociente: −cos x/sen²x = −(1/sen x)(cos x/sen x)</p>
+  <span class="resultado">f′(x) = −csc(x)·cot(x)</span>
+  <p class="paso"><b>6.</b> f(x) = cot(x) = cos(x)/sen(x). Por cociente: [−sen x·sen x − cos x·cos x]/sen²x = −(sen²x + cos²x)/sen²x = −1/sen²x</p>
+  <span class="resultado">f′(x) = −csc²(x)</span>
+  <p class="paso"><b>7.</b> f(x) = (sen x + cos x)/cos x. Primero simplifico: sen x/cos x + cos x/cos x = tan(x) + 1</p>
+  <span class="resultado">f′(x) = sec²(x)</span>
+</div>
+</details>
+</div>
+
+<!-- ═══════════ ACTIVIDAD 3 ═══════════ -->
+<div class="actividad menta">
+<h3 class="act">🪞 Actividad 3 · Autoevaluación AI-Mirror</h3>
+<div class="mirror-grid">
+  <div class="mirror-card"><h4>💭 ¿Qué aprendí?</h4>
+    <p>Las reglas básicas (constante, potencia, suma) y avanzadas (producto, cociente y trigonométricas), y a decidir cuál aplicar según la estructura de la función.</p></div>
+  <div class="mirror-card"><h4>🌱 ¿Cómo lo aprendí?</h4>
+    <p>Con una práctica de 20 preguntas construida con la IA que me pedía el paso a paso y no cambiaba de tema hasta que yo entendiera, y resolviendo los 29 ejercicios de la semana.</p></div>
+  <div class="mirror-card"><h4>🛠️ ¿Cómo lo aplico?</h4>
+    <p>Reescribiendo raíces y fracciones como potencias antes de derivar, y simplificando primero cuando se puede (como en (sen x + cos x)/cos x = tan x + 1).</p></div>
+  <div class="mirror-card"><h4>⭐ ¿Para qué me sirvió?</h4>
+    <p>Para derivar sin recurrir a la definición por límite y ganar velocidad y confianza, dejando lista la base para la regla de la cadena.</p></div>
+</div>
+</div>
+
+<div class="pager">
+  <a href="semana5.html">← Semana 5</a>
+  <a href="semana7.html">Semana 7 →</a>
+</div>
+</section>
+
+<footer>🔮 Semana 6 · Portafolio II: Derivadas · Alison Yeung Vásquez ✨</footer>
+</div>
+
+<script>
+const cartas = [
+  // 10 básicas 🌸
+  {p:"f(x) = 7 → f′(x) = ?", r:"0", m:"🌸 La derivada de una constante es cero"},
+  {p:"f(x) = x⁵ → f′(x) = ?", r:"5x⁴", m:"🌸 Potencia: baja el exponente y réstale 1"},
+  {p:"f(x) = 4x³ → f′(x) = ?", r:"12x²", m:"🌸 Constante por función: 4·3x²"},
+  {p:"f(x) = x² + x → f′(x) = ?", r:"2x + 1", m:"🌸 Suma: término por término"},
+  {p:"f(x) = √x → f′(x) = ?", r:"1/(2√x)", m:"🌸 Reescribe: x^(1/2) → ½x^(−1/2)"},
+  {p:"f(x) = 1/x → f′(x) = ?", r:"−1/x²", m:"🌸 Reescribe: x⁻¹ → −x⁻²"},
+  {p:"f(x) = 6x → f′(x) = ?", r:"6", m:"🌸 (x)′ = 1, la constante se queda"},
+  {p:"f(x) = x⁻³ → f′(x) = ?", r:"−3x⁻⁴", m:"🌸 Potencia con exponente negativo"},
+  {p:"f(x) = 2x⁴ − 3x² + 8 → f′(x) = ?", r:"8x³ − 6x", m:"🌸 Polinomio término por término"},
+  {p:"f(x) = x/5 → f′(x) = ?", r:"1/5", m:"🌸 Es (1/5)·x, constante por función"},
+  // 10 avanzadas 🔮
+  {p:"y = x²·sen(x) → y′ = ?", r:"2x sen(x) + x² cos(x)", m:"🔮 Producto: f′g + fg′"},
+  {p:"y = x·eˣ → y′ = ?", r:"eˣ + x eˣ = eˣ(1 + x)", m:"🔮 Producto con exponencial"},
+  {p:"y = x/(x + 1) → y′ = ?", r:"1/(x + 1)²", m:"🔮 Cociente: (f′g − fg′)/g²"},
+  {p:"y = sen(x)/x → y′ = ?", r:"(x cos x − sen x)/x²", m:"🔮 Cociente clásico"},
+  {p:"y = tan(x) → y′ = ?", r:"sec²(x)", m:"🔮 Se demuestra con el cociente sen/cos"},
+  {p:"y = sec(x) → y′ = ?", r:"sec(x) tan(x)", m:"🔮 Derivada de 1/cos(x)"},
+  {p:"y = sen(3x) → y′ = ?", r:"3 cos(3x)", m:"🔮 Cadena: derivada de adentro ×3"},
+  {p:"y = (x² + 1)⁵ → y′ = ?", r:"10x(x² + 1)⁴", m:"🔮 Cadena: 5(x²+1)⁴ · 2x"},
+  {p:"y = cos²(x) → y′ = ?", r:"−2 sen(x) cos(x)", m:"🔮 Cadena: 2cos(x)·(−sen x)"},
+  {p:"y = x² tan(x) → y′ = ?", r:"2x tan(x) + x² sec²(x)", m:"🔮 Producto + trigonométrica"},
+];
+let orden = cartas.map((_,i)=>i), idx = 0;
+const tarjeta = document.getElementById('tarjeta');
+function pinta(){
+  const c = cartas[orden[idx]];
+  document.getElementById('tPregunta').textContent = c.p;
+  document.getElementById('tRespuesta').textContent = c.r;
+  document.getElementById('tMetodo').textContent = c.m;
+  document.getElementById('contador').textContent = (idx+1) + ' / ' + cartas.length;
+  tarjeta.classList.remove('volteada');
+}
+tarjeta.addEventListener('click', ()=> tarjeta.classList.toggle('volteada'));
+document.getElementById('btnSiguiente').addEventListener('click', ()=>{ idx = (idx+1)%cartas.length; pinta(); });
+document.getElementById('btnMezclar').addEventListener('click', ()=>{
+  for(let i=orden.length-1;i>0;i--){ const j = Math.floor(Math.random()*(i+1)); [orden[i],orden[j]]=[orden[j],orden[i]]; }
+  idx = 0; pinta();
+});
+pinta();
+</script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semana 7 · Regla de la cadena y orden superior ♡ Portafolio II</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="sparkles">🍃</div>
+  <div class="eyebrow">✿ Portafolio II · Derivadas ✿</div>
+  <h1 class="titulo">Semana 7</h1>
+  <p class="subtitulo">Regla de la cadena, exponenciales, logaritmos y derivadas de orden superior</p>
+  <nav class="migas">
+    <a href="index.html">🏠 Portada</a>
+    <a href="semana5.html">🌸 Semana 5</a>
+    <a href="semana6.html">🔮 Semana 6</a>
+    <a href="semana7.html" aria-current="page">🍃 Semana 7</a>
+    <a href="semana8.html">🍑 Semana 8</a>
+  </nav>
+</header>
+
+<section class="semana">
+
+<!-- ═══════════ ACTIVIDAD 1 ═══════════ -->
+<div class="actividad">
+<h3 class="act">💬 Actividad 1 · Interacción con DiálogoX</h3>
+
+<h4>¿Qué es la regla de la cadena? 🔗</h4>
+<p>Es la regla para derivar <strong>funciones compuestas</strong>: cuando una función vive dentro de otra. Si y = f(g(x)), entonces <span class="mate">y′ = f′(g(x)) · g′(x)</span>: derivo la de afuera dejando lo de adentro intacto, y multiplico por la derivada de lo de adentro (Stewart, 2018). Yo la pienso como funciones anidadas en código: <span class="mate">f(g(x))</span> es una llamada dentro de otra, y para saber cuánto cambia la salida hay que encadenar cuánto cambia cada capa.</p>
+
+<h4>¿Cuándo se usa? Cinco ejemplos ✋</h4>
+<ul>
+  <li><span class="mate">y = (3x + 1)⁵</span> → afuera la potencia, adentro 3x + 1 → y′ = 5(3x + 1)⁴·3 = 15(3x + 1)⁴</li>
+  <li><span class="mate">y = sen(x²)</span> → afuera el seno, adentro x² → y′ = cos(x²)·2x</li>
+  <li><span class="mate">y = e^(4x)</span> → afuera eˣ, adentro 4x → y′ = 4e^(4x)</li>
+  <li><span class="mate">y = ln(x² + 1)</span> → afuera ln, adentro x² + 1 → y′ = 2x/(x² + 1)</li>
+  <li><span class="mate">y = √(cos x)</span> → afuera la raíz, adentro cos x → y′ = −sen x / (2√(cos x))</li>
+</ul>
+
+<h4>Propiedades que dependen de la cadena</h4>
+<p>Casi todas las fórmulas "generalizadas" son cadena disfrazada: la potencia generalizada <span class="mate">(uⁿ)′ = n·uⁿ⁻¹·u′</span>, la exponencial <span class="mate">(eᵘ)′ = eᵘ·u′</span> y <span class="mate">(aᵘ)′ = aᵘ·ln(a)·u′</span>, el logaritmo <span class="mate">(ln u)′ = u′/u</span>, la raíz <span class="mate">(√u)′ = u′/(2√u)</span> y las trigonométricas compuestas como <span class="mate">(sen u)′ = cos(u)·u′</span>. La u′ que aparece al final de todas es la firma de la cadena. 💗</p>
+
+<h4>Derivadas de orden superior 📚</h4>
+<p>Son derivadas de derivadas: y′′ es la derivada de y′, y′′′ la de y′′, y así. La primera derivada dice si la función sube o baja; la segunda dice cómo se curva (cóncava hacia arriba o hacia abajo); en física, posición → velocidad → aceleración → jerk (Larson y Edwards, 2017). Tres ejemplos donde se aplican:</p>
+<ul>
+  <li><strong>Física de movimiento:</strong> s(t) posición, s′(t) velocidad, s′′(t) aceleración.</li>
+  <li><strong>Análisis de curvas (semana 8):</strong> la segunda derivada clasifica máximos, mínimos y puntos de inflexión.</li>
+  <li><strong>Series de Taylor:</strong> aproximan una función con sus derivadas sucesivas en un punto.</li>
+</ul>
+<p><strong>En ingeniería de software:</strong> (1) los optimizadores de segundo orden (método de Newton) usan la segunda derivada para converger más rápido que el descenso de gradiente; (2) en gráficos por computadora, la continuidad C² (segunda derivada continua) es lo que hace que dos tramos de una curva spline se unan sin "quiebres" visibles. Como contexto resuelto: si un dron tiene posición s(t) = t³ − 6t² + 9t, su aceleración es s′′(t) = 6t − 12, que se anula en t = 2 s — el instante donde pasa de frenar a acelerar; y para suavizar una animación con easing p(t) = 3t² − 2t³, p′′(t) = 6 − 12t = 0 en t = ½, el punto de máxima velocidad de la transición.</p>
+
+<hr class="suave">
+<h4>🖼️ Infografía de la semana</h4>
+<div class="infografia">
+  <h4 class="info-titulo">🍃 La regla de la cadena 🍃</h4>
+  <p class="info-sub">De afuera hacia adentro, como pelar una cebollita 🧅</p>
+  <div class="info-grid">
+    <div class="info-card"><span class="emo">🔗</span>
+      <h5>La fórmula</h5>
+      <ul><li>[f(g(x))]′ = f′(g(x)) · g′(x)</li><li>afuera derivada × adentro derivada</li><li>lo de adentro NO se toca al derivar afuera</li></ul>
+    </div>
+    <div class="info-card"><span class="emo">👀</span>
+      <h5>¿Cómo la reconozco?</h5>
+      <ul><li>Paréntesis elevados: (…)ⁿ</li><li>Función de función: sen(x²), e^(3x)</li><li>Raíces y ln con algo adentro</li></ul>
+    </div>
+    <div class="info-card"><span class="emo">🧬</span>
+      <h5>Fórmulas hijas</h5>
+      <ul><li>(uⁿ)′ = n·uⁿ⁻¹·u′</li><li>(eᵘ)′ = eᵘ·u′ · (ln u)′ = u′/u</li><li>(sen u)′ = cos(u)·u′</li></ul>
+    </div>
+    <div class="info-card"><span class="emo">📚</span>
+      <h5>Orden superior</h5>
+      <ul><li>y′ pendiente · y′′ curvatura</li><li>posición → velocidad → aceleración</li><li>clave para graficar en semana 8</li></ul>
+    </div>
+  </div>
+  <div class="info-pasos">
+    <span><b>1</b> Identifica la capa de afuera</span>
+    <span><b>2</b> Derívala dejando lo de adentro igual</span>
+    <span><b>3</b> Multiplica por la derivada de adentro</span>
+    <span><b>4</b> ¿Más capas? ¡Repite! ✨</span>
+  </div>
+</div>
+
+<div class="lab">
+  <h4>🧪 Pela la cebollita: y = sen((3x² + 1)⁴)</h4>
+  <p style="font-size:.92rem">Uno de los ejercicios de mi práctica con la IA, capa por capa:</p>
+  <div class="lecturas" style="flex-direction:column;align-items:flex-start">
+    <span>🧅 Capa 1 (afuera): sen(□) → cos(□)</span>
+    <span>🧅 Capa 2: (□)⁴ → 4(□)³</span>
+    <span>🧅 Capa 3 (adentro): 3x² + 1 → 6x</span>
+    <span style="background:#ffe3f0">✨ y′ = cos((3x² + 1)⁴) · 4(3x² + 1)³ · 6x = 24x(3x² + 1)³ cos((3x² + 1)⁴)</span>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════ ACTIVIDAD 2 ═══════════ -->
+<div class="actividad lila">
+<h3 class="act">✏️ Actividad 2 · Ejercicios prácticos</h3>
+
+<details class="ejercicio" open>
+<summary>Ejercicio A · Funciones exponenciales (5 derivadas)</summary>
+<div>
+  <p class="paso"><b>1.</b> f(x) = e^(x²) + e^(x+1) + 5</p>
+  <p class="paso">Cadena en cada término: e^(x²)·(x²)′ + e^(x+1)·(x+1)′ + 0</p>
+  <span class="resultado">f′(x) = 2x·e^(x²) + e^(x+1)</span>
+  <p class="paso"><b>2.</b> f(x) = x⁴e^(3x) + x·e^(x+1) — producto + cadena en ambos términos:</p>
+  <p class="paso">4x³e^(3x) + x⁴·3e^(3x) + 1·e^(x+1) + x·e^(x+1)</p>
+  <span class="resultado">f′(x) = e^(3x)(4x³ + 3x⁴) + e^(x+1)(1 + x)</span>
+  <p class="paso"><b>3.</b> f(x) = 10^(eˣ) — exponencial de base 10 con exponente eˣ:</p>
+  <p class="paso">(aᵘ)′ = aᵘ·ln(a)·u′ con u = eˣ:</p>
+  <span class="resultado">f′(x) = 10^(eˣ)·ln(10)·eˣ</span>
+  <p class="paso"><b>4.</b> f(x) = x·eˣ + eˣ + e — producto en el primero, la e sola es constante:</p>
+  <p class="paso">(eˣ + x·eˣ) + eˣ + 0</p>
+  <span class="resultado">f′(x) = x·eˣ + 2eˣ = eˣ(x + 2)</span>
+  <p class="paso"><b>5.</b> f(x) = (2^(x²−3))ˣ. Primero uso leyes de potencias: (2^(x²−3))ˣ = 2^(x³−3x).</p>
+  <p class="paso">(aᵘ)′ con u = x³ − 3x → u′ = 3x² − 3:</p>
+  <span class="resultado">f′(x) = 2^(x³−3x)·ln(2)·(3x² − 3)</span>
+</div>
+</details>
+
+<details class="ejercicio">
+<summary>Ejercicio B · Funciones logarítmicas (5 derivadas)</summary>
+<div>
+  <p class="paso"><b>1.</b> f(x) = Ln(x³/5). Propiedades del log: = 3 Ln(x) − Ln(5) → la constante muere:</p>
+  <span class="resultado">f′(x) = 3/x</span>
+  <p class="paso"><b>2.</b> f(x) = 1/Ln(√x). Como Ln(√x) = ½Ln(x), f(x) = 2/Ln(x) = 2·(Ln x)⁻¹.</p>
+  <p class="paso">Cadena: −2·(Ln x)⁻²·(1/x)</p>
+  <span class="resultado">f′(x) = −2 / (x·Ln²(x))</span>
+  <p class="paso"><b>3.</b> f(x) = Ln(x)/3ˣ — regla del cociente con (3ˣ)′ = 3ˣ ln 3:</p>
+  <p class="paso">[(1/x)·3ˣ − Ln(x)·3ˣ·ln(3)] / 3²ˣ — el 3ˣ se cancela:</p>
+  <span class="resultado">f′(x) = (1/x − ln(3)·Ln(x)) / 3ˣ</span>
+  <p class="paso"><b>4.</b> f(x) = log₂(x⁷) = 7·log₂(x). Con (log₂x)′ = 1/(x ln 2):</p>
+  <span class="resultado">f′(x) = 7 / (x·ln 2)</span>
+  <p class="paso"><b>5.</b> f(x) = log₅((x+2)/x²)³. Propiedades: = 3·log₅(x+2) − 6·log₅(x) = (3 ln(x+2) − 6 ln x)/ln 5:</p>
+  <span class="resultado">f′(x) = (3/ln 5)·[1/(x+2) − 2/x]</span>
+</div>
+</details>
+
+<details class="ejercicio">
+<summary>Ejercicio C · Funciones radicales (5 derivadas)</summary>
+<div>
+  <p class="paso">Estrategia 🌷: toda raíz es una potencia fraccionaria, así que todas salen con <span class="mate">(uⁿ)′ = n·uⁿ⁻¹·u′</span>.</p>
+  <p class="paso"><b>1.</b> f(x) = √(3x + 5) = (3x+5)^(1/2) → ½(3x+5)^(−1/2)·3</p>
+  <span class="resultado">f′(x) = 3 / (2√(3x + 5))</span>
+  <p class="paso"><b>2.</b> f(x) = ³√(4x + x − 6) = (5x − 6)^(1/3) → ⅓(5x−6)^(−2/3)·5</p>
+  <span class="resultado">f′(x) = 5 / (3·³√((5x − 6)²))</span>
+  <p class="paso"><b>3.</b> f(x) = √(5(7x² + 12x)) = (35x² + 60x)^(1/2) → (70x + 60)/(2√(35x² + 60x))</p>
+  <span class="resultado">f′(x) = (35x + 30) / √(35x² + 60x)</span>
+  <p class="paso"><b>4.</b> f(x) = ⁴√(8x² − 7x) = (8x² − 7x)^(1/4) → ¼(8x² − 7x)^(−3/4)·(16x − 7)</p>
+  <span class="resultado">f′(x) = (16x − 7) / (4·⁴√((8x² − 7x)³))</span>
+  <p class="paso"><b>5.</b> f(x) = ⁵√(x³ + 2x² − x) → ⅕(x³ + 2x² − x)^(−4/5)·(3x² + 4x − 1)</p>
+  <span class="resultado">f′(x) = (3x² + 4x − 1) / (5·⁵√((x³ + 2x² − x)⁴))</span>
+</div>
+</details>
+
+<details class="ejercicio">
+<summary>Ejercicio D · Regla de la cadena (5 derivadas)</summary>
+<div>
+  <p class="paso"><b>1.</b> f(x) = (x² − 2x + 4)/(x + 2) — cociente:</p>
+  <p class="paso">[(2x − 2)(x + 2) − (x² − 2x + 4)·1]/(x + 2)² = (2x² + 2x − 4 − x² + 2x − 4)/(x + 2)²</p>
+  <span class="resultado">f′(x) = (x² + 4x − 8)/(x + 2)²</span>
+  <p class="paso"><b>2.</b> g(x) = sen²(2x³ + x) — cadena doble: potencia → seno → polinomio:</p>
+  <p class="paso">2 sen(2x³ + x)·cos(2x³ + x)·(6x² + 1)</p>
+  <span class="resultado">g′(x) = (6x² + 1)·sen(2(2x³ + x))</span>
+  <p class="paso"><b>3.</b> h(x) = Ln((1/x)³) = 3 Ln(x⁻¹) = −3 Ln(x):</p>
+  <span class="resultado">h′(x) = −3/x</span>
+  <p class="paso"><b>4.</b> c(x) = ⁶√(cos(2x + 1)) = (cos(2x+1))^(1/6):</p>
+  <p class="paso">⅙(cos(2x+1))^(−5/6)·(−sen(2x+1))·2</p>
+  <span class="resultado">c′(x) = −sen(2x + 1) / (3·⁶√(cos⁵(2x + 1)))</span>
+  <p class="paso"><b>5.</b> k(x) = x²·sen(x³/(x+1)) — producto + cadena + cociente 🌪️. Sea u = x³/(x+1):</p>
+  <p class="paso">u′ = [3x²(x+1) − x³]/(x+1)² = (2x³ + 3x²)/(x+1)²</p>
+  <p class="paso">k′(x) = 2x·sen(u) + x²·cos(u)·u′</p>
+  <span class="resultado">k′(x) = 2x·sen(x³/(x+1)) + x²(2x³ + 3x²)/(x+1)²·cos(x³/(x+1))</span>
+</div>
+</details>
+
+<details class="ejercicio">
+<summary>Ejercicio E · Derivadas de orden superior (4 ejercicios)</summary>
+<div>
+  <p class="paso"><b>1.</b> y = 1/√x = x^(−1/2), hallar y⁽⁴⁾ — derivo cuatro veces, el exponente baja de a poquito:</p>
+  <p class="paso">y′ = −½x^(−3/2) · y′′ = ¾x^(−5/2) · y′′′ = −(15/8)x^(−7/2)</p>
+  <span class="resultado">y⁽⁴⁾ = (105/16)·x^(−9/2)</span>
+  <p class="paso"><b>2.</b> y = e⁻ˣ·Ln(x), hallar y′′ — producto dos veces:</p>
+  <p class="paso">y′ = −e⁻ˣLn(x) + e⁻ˣ/x = e⁻ˣ(1/x − Ln x)</p>
+  <p class="paso">y′′ = −e⁻ˣ(1/x − Ln x) + e⁻ˣ(−1/x² − 1/x)</p>
+  <span class="resultado">y′′ = e⁻ˣ(Ln(x) − 2/x − 1/x²)</span>
+  <p class="paso"><b>3.</b> y = ln(x), hallar y′′′:</p>
+  <p class="paso">y′ = 1/x = x⁻¹ · y′′ = −x⁻²</p>
+  <span class="resultado">y′′′ = 2x⁻³ = 2/x³</span>
+  <p class="paso"><b>4.</b> y = 4x² + 4, hallar y⁽²⁰⁾:</p>
+  <p class="paso">y′ = 8x · y′′ = 8 · y′′′ = 0 — y de la tercera en adelante todas son cero, porque un polinomio de grado n se "agota" en n+1 derivadas.</p>
+  <span class="resultado">y⁽²⁰⁾ = 0</span>
+</div>
+</details>
+</div>
+
+<!-- ═══════════ ACTIVIDAD 3 ═══════════ -->
+<div class="actividad menta">
+<h3 class="act">🪞 Actividad 3 · Autoevaluación AI-Mirror</h3>
+<div class="mirror-grid">
+  <div class="mirror-card"><h4>💭 ¿Qué aprendí?</h4>
+    <p>A derivar funciones compuestas con la regla de la cadena (incluso con varias capas anidadas), exponenciales, logarítmicas y radicales, y a calcular derivadas de orden superior.</p></div>
+  <div class="mirror-card"><h4>🌱 ¿Cómo lo aprendí?</h4>
+    <p>Pensando cada función como capas de una cebollita 🧅 y practicando con la IA ejercicios de nivel medio-avanzado donde me pedía justificar el paso a paso antes de avanzar.</p></div>
+  <div class="mirror-card"><h4>🛠️ ¿Cómo lo aplico?</h4>
+    <p>Simplificando con propiedades de logaritmos y potencias antes de derivar (¡ahorra muchísimo trabajo!) y relacionando la segunda derivada con curvatura y aceleración.</p></div>
+  <div class="mirror-card"><h4>⭐ ¿Para qué me sirvió?</h4>
+    <p>Para derivar prácticamente cualquier función y llegar preparada a las aplicaciones: L’Hôpital, optimización y análisis de gráficas de la semana 8.</p></div>
+</div>
+</div>
+
+<div class="pager">
+  <a href="semana6.html">← Semana 6</a>
+  <a href="semana8.html">Semana 8 →</a>
+</div>
+</section>
+
+<footer>🍃 Semana 7 · Portafolio II: Derivadas · Alison Yeung Vásquez ✨</footer>
+</div>
+</body>
+</html>
