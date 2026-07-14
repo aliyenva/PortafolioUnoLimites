@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semana 3 · Límites trigonométricos, exponenciales y logarítmicos ♡ Portafolio I</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="progreso" aria-hidden="true"></div>
+<button id="subir" aria-label="Volver arriba">🎀</button>
+
+<span class="deco" style="top:12%;left:4%;">🌸</span>
+<span class="deco" style="top:30%;right:5%;animation-delay:1.4s;">⭐</span>
+<span class="deco" style="top:58%;left:3%;animation-delay:2.6s;">💗</span>
+<span class="deco" style="top:78%;right:4%;animation-delay:.8s;">🌙</span>
+<span class="deco" style="top:45%;left:7%;animation-delay:3.4s;">✨</span>
+
+<header>
+  <div class="nube" style="padding:30px 42px 26px;max-width:560px">
+    <span class="kicker">✿ Portafolio I · Límites ✿</span>
+    <h1 style="font-size:clamp(1.9rem,4.8vw,2.8rem)">Semana 3</h1>
+    <p class="hero-sub">Límites trigonométricos, exponenciales y logarítmicos</p>
+  </div>
+</header>
+
+<nav class="migas" aria-label="Semanas del portafolio">
+  <a class="n1" href="../">🏠 Inicio</a>
+  <a class="n1" href="index.html">🌙 Portada</a>
+  <a class="n1" href="semana1.html">🌸 Semana 1</a>
+  <a class="n2" href="semana2.html">🔮 Semana 2</a>
+  <a class="n3" href="semana3.html" aria-current="page">🍃 Semana 3</a>
+  <a class="n4" href="semana4.html">🍑 Semana 4</a>
+</nav>
+
+<main>
+
+<section class="semana s3" id="semana3">
+  <div class="semana-head">
+    <div class="mascota">🍃</div>
+    <h2><span class="wk">Semana 3</span>Límites trigonométricos, exponenciales y logarítmicos</h2>
+  </div>
+  <div class="card">
+
+    <span class="tag">💬 Actividad 1 · Interacción con DiálogoX</span>
+    <h4>Límites trigonométricos 🌀</h4>
+    <p>Involucran seno, coseno o tangente. El resultado clave es lím (x→0) sen x / x = 1, junto con lím (x→0) (1 − cos x)/x = 0 (Stewart, 2018). Ante una forma 0/0 trigonométrica, se manipula la expresión para que aparezcan estos límites conocidos. En software se relacionan con la aproximación de movimientos suaves en animaciones, donde sen x ≈ x para ángulos pequeños.</p>
+    <ul>
+      <li>lím (x→0) sen 3x / x = <b>3</b></li>
+      <li>lím (x→0) tan x / x = <b>1</b></li>
+      <li>lím (x→0) sen x / 5x = <b>1/5</b></li>
+    </ul>
+
+    <div class="explorador" id="ix-sinc">
+      <h4>🧪 Explora lím (x→0) sen(x)/x</h4>
+      <p class="hint">Acerca x a 0 desde cualquier lado: la función nunca está definida en 0 (circulito abierto 🍩), ¡pero se acerca clarito a 1!</p>
+      <div class="plotbox" id="plot-sinc"></div>
+      <input type="range" id="sl-sinc" min="-6" max="6" step="0.01" value="3" aria-label="Valor de x">
+      <div class="lecturas">
+        <div class="lectura"><span class="lab">x</span><span class="val" id="sinc-x">3.00</span></div>
+        <div class="lectura"><span class="lab">sen(x)/x</span><span class="val" id="sinc-y">0.047</span></div>
+        <div class="lectura meta"><span class="lab">Distancia a L = 1</span><span class="val" id="sinc-d">0.953</span></div>
+      </div>
+    </div>
+
+    <h4>Límites exponenciales 🚀</h4>
+    <p>Involucran aˣ o eˣ; los notables son lím (x→0) (eˣ − 1)/x = 1 y lím (x→∞) (1 + 1/x)ˣ = e (Larson y Edwards, 2017). Modelan crecimiento y decaimiento, por ejemplo el decaimiento de una tasa de aprendizaje en un modelo.</p>
+    <ul>
+      <li>lím (x→0) (eˣ − 1)/x = <b>1</b></li>
+      <li>lím (x→∞) e⁻ˣ = <b>0</b></li>
+      <li>lím (x→∞) (1 + 1/x)ˣ = <b>e ≈ 2.71828</b></li>
+    </ul>
+
+    <h4>Límites con logaritmos 🌳</h4>
+    <p>Involucran ln(x): ln(x) → −∞ cuando x → 0⁺ y ln(x) → +∞ cuando x → ∞, pero crece muy lentamente. El crecimiento logarítmico describe la eficiencia de la búsqueda binaria, O(log n).</p>
+    <ul>
+      <li>lím (x→1) ln(x) = <b>0</b></li>
+      <li>lím (x→0⁺) ln(x) = <b>−∞</b></li>
+      <li>lím (x→0) ln(1 + x)/x = <b>1</b></li>
+    </ul>
+
+    <span class="tag">🖼️ Infografía de la semana</span>
+    <div class="infokawaii">
+      <h3>♡ Límites especiales ♡</h3>
+      <p class="sub">Guía de cálculo aplicada a la programación</p>
+      <div class="bloques">
+        <div class="bloque b-trig">
+          <span class="emoji">🌸</span>
+          <h4>Límite trigonométrico</h4>
+          <span class="formula">lím (x→0) sen(x)/x = 1</span>
+          <p>Clave en gráficos por computadora y simulaciones: la función sinc se usa en procesamiento de señales, filtros de audio e interpolación suave.</p>
+        </div>
+        <div class="bloque b-exp">
+          <span class="emoji">🎀</span>
+          <h4>Límites exponenciales</h4>
+          <span class="formula">lím (x→0) (eˣ − 1)/x = 1 · lím (x→∞) (1 + 1/x)ˣ = e</span>
+          <p>Fundamentan el interés compuesto continuo y el machine learning: la constante e aparece en la función sigmoide de las redes neuronales.</p>
+        </div>
+        <div class="bloque b-log">
+          <span class="emoji">🍀</span>
+          <h4>Límite logarítmico</h4>
+          <span class="formula">lím (x→0) ln(1 + x)/x = 1</span>
+          <p>La búsqueda binaria divide el espacio a la mitad en cada paso: su eficiencia O(log n) es consecuencia del crecimiento logarítmico.</p>
+        </div>
+        <div class="bloque b-eps">
+          <span class="emoji">⭐</span>
+          <h4>Definición ε-δ</h4>
+          <span class="formula">0 &lt; |x − a| &lt; δ ⟹ |f(x) − L| &lt; ε</span>
+          <p>Usada en precisión numérica: en algoritmos iterativos (Newton-Raphson, gradiente descendente), ε define el criterio de convergencia.</p>
+        </div>
+      </div>
+    </div>
+
+    <span class="tag">✏️ Actividad 2 · Ejercicios prácticos</span>
+
+    <details>
+      <summary><span class="puff">＋</span>Ejercicio 1 · Definición formal ε-δ (5 demostraciones)</summary>
+      <div class="det-body">
+        <div class="subej"><h5>a) Demostrar lím (x→4) √x = 2</h5>
+          <p class="paso">|√x − 2| = |x − 4| / (√x + 2) ≤ |x − 4| / 2 (porque √x + 2 ≥ 2).</p>
+          <span class="res">Se elige δ = 2ε ✓</span>
+        </div>
+        <div class="subej"><h5>b) Demostrar lím (x→4) (3x − 7) = 5</h5>
+          <p class="paso">|(3x − 7) − 5| = 3|x − 4| &lt; ε ⟹ |x − 4| &lt; ε/3.</p>
+          <span class="res">Se elige δ = ε/3 ✓</span>
+        </div>
+        <div class="subej"><h5>c) Demostrar lím (x→−2) (1 − 4x) = 9</h5>
+          <p class="paso">|(1 − 4x) − 9| = 4|x + 2| &lt; ε ⟹ |x + 2| &lt; ε/4.</p>
+          <span class="res">Se elige δ = ε/4 ✓</span>
+        </div>
+        <div class="subej"><h5>d) lím (x→3) x² = 9 con δ ≤ 1: cota de |x + 3|</h5>
+          <p class="paso">|x² − 9| = |x − 3| · |x + 3|. Con |x − 3| &lt; 1: 2 &lt; x &lt; 4 ⟹ 5 &lt; x + 3 &lt; 7.</p>
+          <span class="res">Cota superior: 7 · luego δ = mín(1, ε/7)</span>
+        </div>
+        <div class="subej"><h5>e) lím (x→−1) (5 − 3x) = 8: estructura tras simplificar</h5>
+          <p class="paso">|(5 − 3x) − 8| = 3|x + 1| &lt; ε.</p>
+          <span class="res">Se llega a |x + 1| &lt; ε/3 (de ahí δ = ε/3)</span>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="puff">＋</span>Ejercicio 2 · Límites infinitos (5 límites)</summary>
+      <div class="det-body">
+        <div class="subej"><h5>1) lím (x→−3⁺) (x + 2)/(x + 3)</h5>
+          <p class="paso">Numerador → −1; denominador → 0⁺.</p>
+          <span class="res">= −∞</span>
+        </div>
+        <div class="subej"><h5>2) lím (x→3⁺) Ln(x² − 9)</h5>
+          <p class="paso">x² − 9 → 0⁺ y Ln(0⁺) → −∞.</p>
+          <span class="res">= −∞</span>
+        </div>
+        <div class="subej"><h5>3) lím (x→−2π⁻) x · csc(x)</h5>
+          <p class="paso">sen(x) → 0⁻ ⟹ csc(x) → −∞; el factor x es negativo: (negativo)·(−∞).</p>
+          <span class="res">= +∞</span>
+        </div>
+        <div class="subej"><h5>4) lím (x→−3⁺) eˣ/(x − 5)³</h5>
+          <p class="paso">El denominador no se anula en x = −3: eˣ → e⁻³ y (x − 5)³ → −512. Límite finito.</p>
+          <span class="res">= −e⁻³/512 ≈ −0.0000973</span>
+        </div>
+        <div class="subej"><h5>5) lím (x→π⁻) cot(x)</h5>
+          <p class="paso">cos(π) = −1 y sen(x) → 0⁺.</p>
+          <span class="res">= −∞</span>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="puff">＋</span>Ejercicio 3 · Evaluación justificando las leyes de los límites</summary>
+      <div class="det-body">
+        <div class="subej"><h5>1) lím (t→−2) (t⁴ − 2)/(2t² − 3t + 2)</h5>
+          <p class="paso">Ley del cociente (el denominador no se anula): 14/16.</p>
+          <span class="res">= 7/8</span>
+        </div>
+        <div class="subej"><h5>2) lím (x→2) √((2x² + 1)/(3x − 2))</h5>
+          <p class="paso">Ley de la raíz + ley del cociente: √(9/4).</p>
+          <span class="res">= 3/2</span>
+        </div>
+        <div class="subej"><h5>3) lím (x→3) (5x³ − 3x³ + x − 6)</h5>
+          <p class="paso">Se combinan términos: 2x³ + x − 6. Leyes de suma y potencia: 54 + 3 − 6.</p>
+          <span class="res">= 51</span>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="puff">＋</span>Ejercicio 4 · Problema programado 🐍 (concentración C(t))</summary>
+      <div class="det-body">
+        <p class="paso">Para C(t) = (15t + 10)/(3t + 5) y t → ∞ se comparan los grados; el cociente de coeficientes principales es 15/3.</p>
+        <span class="res">lím (t→∞) C(t) = 5</span>
+        <p class="paso" style="margin-top:10px;">Forma equivalente: C(t) = 5 − 15/(3t + 5), que muestra que C(t) siempre es menor que 5 y se acerca sin alcanzarlo.</p>
+        <div class="plotbox" id="plot-c5"></div>
+        <p class="caption" style="text-align:center;font-size:.83rem;font-weight:600;color:#92697A;">Figura 2 · Convergencia de C(t) hacia su límite: la curva se acerca a la recta y = 5 sin tocarla</p>
+        <div class="explorador" id="ix-conc">
+          <h4>🧪 Haz crecer t como en el script 🐍</h4>
+          <p class="hint">El deslizador duplica t igual que el bucle del programa: mira cómo la diferencia con el límite se hace chiquitita pero nunca llega a cero.</p>
+          <input type="range" id="sl-conc" min="0" max="14" step="1" value="0" aria-label="Duplicaciones de t">
+          <div class="lecturas">
+            <div class="lectura"><span class="lab">t</span><span class="val" id="conc-t">1</span></div>
+            <div class="lectura"><span class="lab">C(t)</span><span class="val" id="conc-c">3.125</span></div>
+            <div class="lectura meta"><span class="lab">|5 − C(t)|</span><span class="val" id="conc-d">1.875</span></div>
+          </div>
+        </div>
+        <p class="paso" style="margin-top:10px;">Script en Python para verificarlo numéricamente:</p>
+<pre><span class="c"># Limite de la concentracion C(t) cuando t tiende a infinito</span>
+<span class="k">def</span> C(t):
+    <span class="k">return</span> (15*t + 10) / (3*t + 5)
+
+epsilon = 0.0001
+t = 1.0            <span class="c"># valor inicial</span>
+anterior = C(t)
+
+<span class="k">while</span> True:
+    t = t * 2      <span class="c"># t crece exponencialmente</span>
+    actual = C(t)
+    <span class="k">if</span> abs(actual - anterior) &lt; epsilon:
+        <span class="k">break</span>
+    anterior = actual
+
+<span class="k">print</span>(<span class="s">'t final:'</span>, t)
+<span class="k">print</span>(<span class="s">'C(t) aproximado:'</span>, actual)
+<span class="k">print</span>(<span class="s">'Limite analitico:'</span>, 5)
+<span class="k">print</span>(<span class="s">'Diferencia con el limite:'</span>, abs(5 - actual))</pre>
+        <p class="paso"><b>¿Por qué el programa no llega exactamente a 5?</b> Porque C(t) = 5 − 15/(3t + 5): ese término solo vale cero cuando t es infinito, y el programa usa valores finitos de t. Además se detiene cuando la diferencia entre dos pasos consecutivos es menor que épsilon, no cuando alcanza 5, así que se queda un poco por debajo.</p>
+        <p class="paso"><b>Precisión de punto flotante y límite teórico.</b> La computadora representa los reales con bits limitados, por lo que muchos valores se guardan de forma aproximada. El límite teórico (5) es un valor ideal alcanzado solo en el infinito; el cálculo numérico converge a un valor muy cercano, limitado por el criterio de paro y la representación finita de punto flotante.</p>
+      </div>
+    </details>
+
+    <span class="tag">🪞 Actividad 3 · Autoevaluación AI-Mirror</span>
+    <div class="mirror">
+      <article class="m1"><h4>💭 ¿Qué aprendí?</h4><p>A resolver límites trigonométricos, exponenciales y logarítmicos, a usar la definición ε-δ y a evaluar límites infinitos, reconociendo los límites notables.</p></article>
+      <article class="m2"><h4>🌱 ¿Cómo lo aprendí?</h4><p>Identificando los límites notables, aplicando la definición formal en demostraciones y programando en Python la convergencia de una función: teoría + práctica.</p></article>
+      <article class="m3"><h4>🛠️ ¿Cómo lo aplico?</h4><p>En animaciones con ángulos pequeños, en el modelado de crecimiento o decaimiento y en el análisis de la complejidad O(log n) de la búsqueda binaria.</p></article>
+      <article class="m4"><h4>⭐ ¿Para qué me sirvió?</h4><p>Para conectar el cálculo con la programación y entender por qué los resultados numéricos se acercan al valor teórico sin alcanzarlo exactamente.</p></article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="pager">
+  <a href="semana2.html">← Semana 2</a>
+  <a href="semana4.html">Semana 4 →</a>
+</div>
+
+<svg class="wave" viewBox="0 0 1200 34" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20 Q 60 0 120 20 T 240 20 T 360 20 T 480 20 T 600 20 T 720 20 T 840 20 T 960 20 T 1080 20 T 1200 20 V34 H0 Z" fill="#FFD3E4"/></svg>
+<footer>
+  <div class="hearts">🌸 ⭐ 💗 ⭐ 🌸</div>
+  Semana 3: Límites trigonométricos, exponenciales y logarítmicos · Alison Yeung Vásquez · Universidad CENFOTEC · C2-2026<br>
+  hecho con muuucho cariño y un poquito de cálculo ✨
+</footer>
+
+<script>
+/* ════════ mini-librería de gráficas kawaii (SVG puro) ════════ */
+const COL = {rosa:'#FF8FB8',lila:'#B79CEF',menta:'#5ECCA4',durazno:'#FFAD80',choco:'#6B4453',grid:'#FBE3EE',eje:'#D9B8C9',verde:'#7BC9A0'};
+
+function plot(id, cfg){
+  const el = document.getElementById(id); if(!el) return null;
+  const W = cfg.w||560, H = cfg.h||360, P = 40;
+  const {xmin,xmax,ymin,ymax} = cfg;
+  const sx = x => P + (x-xmin)/(xmax-xmin)*(W-2*P);
+  const sy = y => H-P - (y-ymin)/(ymax-ymin)*(H-2*P);
+  let s = '';
+  const xstep = cfg.xstep||1, ystep = cfg.ystep||1;
+  for(let x=Math.ceil(xmin/xstep)*xstep; x<=xmax+1e-9; x+=xstep){
+    s += `<line x1="${sx(x)}" y1="${sy(ymin)}" x2="${sx(x)}" y2="${sy(ymax)}" stroke="${COL.grid}" stroke-width="1.5"/>`;
+  }
+  for(let y=Math.ceil(ymin/ystep)*ystep; y<=ymax+1e-9; y+=ystep){
+    s += `<line x1="${sx(xmin)}" y1="${sy(y)}" x2="${sx(xmax)}" y2="${sy(y)}" stroke="${COL.grid}" stroke-width="1.5"/>`;
+  }
+  if(ymin<=0 && ymax>=0) s += `<line x1="${sx(xmin)}" y1="${sy(0)}" x2="${sx(xmax)}" y2="${sy(0)}" stroke="${COL.eje}" stroke-width="2.5" stroke-linecap="round"/>`;
+  if(xmin<=0 && xmax>=0) s += `<line x1="${sx(0)}" y1="${sy(ymin)}" x2="${sx(0)}" y2="${sy(ymax)}" stroke="${COL.eje}" stroke-width="2.5" stroke-linecap="round"/>`;
+  const lstep = cfg.lstep||xstep*2, lystep = cfg.lystep||ystep*2;
+  for(let x=Math.ceil(xmin/lstep)*lstep; x<=xmax+1e-9; x+=lstep){
+    if(Math.abs(x)<1e-9) continue;
+    s += `<text x="${sx(x)}" y="${(ymin<=0&&ymax>=0?sy(0):sy(ymin))+16}" font-size="11" font-weight="700" fill="${COL.eje}" text-anchor="middle">${+x.toFixed(2)}</text>`;
+  }
+  for(let y=Math.ceil(ymin/lystep)*lystep; y<=ymax+1e-9; y+=lystep){
+    if(Math.abs(y)<1e-9) continue;
+    s += `<text x="${(xmin<=0&&xmax>=0?sx(0):sx(xmin))-8}" y="${sy(y)+4}" font-size="11" font-weight="700" fill="${COL.eje}" text-anchor="end">${+y.toFixed(2)}</text>`;
+  }
+  (cfg.vasym||[]).forEach(x=>{ s += `<line x1="${sx(x)}" y1="${sy(ymin)}" x2="${sx(x)}" y2="${sy(ymax)}" stroke="${COL.rosa}" stroke-width="2.5" stroke-dasharray="7 6" opacity=".75"/>`; });
+  (cfg.hasym||[]).forEach(y=>{ s += `<line x1="${sx(xmin)}" y1="${sy(y)}" x2="${sx(xmax)}" y2="${sy(y)}" stroke="${COL.verde}" stroke-width="2.5" stroke-dasharray="7 6" opacity=".85"/>`; });
+  (cfg.fns||[]).forEach(fn=>{
+    const N = fn.n||600, a = fn.from??xmin, b = fn.to??xmax;
+    const margin = (ymax-ymin)*2;
+    let d = '', pen = false, py = null;
+    for(let i=0;i<=N;i++){
+      const x = a + (b-a)*i/N;
+      let y; try{ y = fn.f(x); }catch(e){ y = NaN; }
+      const ok = isFinite(y) && y > ymin-margin && y < ymax+margin;
+      const jump = pen && py!==null && Math.abs(y-py) > (ymax-ymin)*0.9;
+      if(ok && !jump){
+        const yc = Math.max(ymin-0.4*(ymax-ymin), Math.min(ymax+0.4*(ymax-ymin), y));
+        d += (pen?'L':'M') + sx(x).toFixed(1) + ' ' + sy(yc).toFixed(1) + ' ';
+        pen = true; py = y;
+      } else { pen = false; py = ok ? y : null; }
+    }
+    s += `<path d="${d}" fill="none" stroke="${fn.color||COL.lila}" stroke-width="${fn.width||3.5}" stroke-linecap="round" stroke-linejoin="round"/>`;
+  });
+  (cfg.points||[]).forEach(p=>{
+    s += `<circle cx="${sx(p.x)}" cy="${sy(p.y)}" r="6" fill="${p.open?'#fff':(p.color||COL.rosa)}" stroke="${p.color||COL.rosa}" stroke-width="3"/>`;
+  });
+  if(cfg.title) s += `<text x="${W/2}" y="22" font-size="14" font-weight="700" fill="${COL.choco}" text-anchor="middle" font-family="'Baloo 2',sans-serif">${cfg.title}</text>`;
+  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${cfg.title||'gráfica'}">${s}<g id="${id}-marker"></g></svg>`;
+  return {sx, sy, marker: el.querySelector(`#${CSS.escape(id+'-marker')}`)};
+}
+
+/* ════════ Explorador sen(x)/x ════════ */
+const sinc = x => Math.abs(x)<1e-9 ? NaN : Math.sin(x)/x;
+const pSinc = plot('plot-sinc', {
+  xmin:-7, xmax:7, ymin:-0.5, ymax:1.3, xstep:1, ystep:0.25, lstep:2, lystep:0.5, h:300,
+  title:'f(x) = sen(x)/x  →  L = 1',
+  hasym:[1],
+  fns:[ {f:sinc, from:-7, to:-0.02, color:COL.menta}, {f:sinc, from:0.02, to:7, color:COL.menta} ],
+  points:[ {x:0,y:1,open:true,color:COL.menta} ]
+});
+function updSinc(){
+  let x = parseFloat(document.getElementById('sl-sinc').value);
+  if(Math.abs(x)<0.01) x = x<0 ? -0.01 : 0.01;
+  const y = sinc(x);
+  document.getElementById('sinc-x').textContent = x.toFixed(2);
+  document.getElementById('sinc-y').textContent = y.toFixed(4);
+  document.getElementById('sinc-d').textContent = Math.abs(1-y).toFixed(4);
+  if(pSinc) pSinc.marker.innerHTML = `<line x1="${pSinc.sx(x)}" y1="${pSinc.sy(-0.5)}" x2="${pSinc.sx(x)}" y2="${pSinc.sy(y)}" stroke="#FFD98E" stroke-width="2" stroke-dasharray="4 4"/><circle cx="${pSinc.sx(x)}" cy="${pSinc.sy(y)}" r="8" fill="#FFD98E" stroke="#fff" stroke-width="3"/>`;
+}
+document.getElementById('sl-sinc')?.addEventListener('input', updSinc); updSinc();
+
+/* ════════ Figura 2 + explorador C(t) → 5 ════════ */
+const C5 = t => (15*t+10)/(3*t+5);
+const pC5 = plot('plot-c5', {
+  xmin:0, xmax:40, ymin:0, ymax:6, xstep:5, ystep:1, lstep:10, lystep:1, h:300,
+  title:'C(t) = (15t + 10)/(3t + 5)  →  5',
+  hasym:[5],
+  fns:[ {f:C5, from:0, to:40, color:COL.menta} ]
+});
+function updConc(){
+  const n = parseInt(document.getElementById('sl-conc').value);
+  const t = Math.pow(2,n);
+  const c = C5(t);
+  document.getElementById('conc-t').textContent = t.toLocaleString('es-CR');
+  document.getElementById('conc-c').textContent = c.toFixed(6);
+  document.getElementById('conc-d').textContent = (5-c).toFixed(6);
+  if(pC5){ const tx = Math.min(t,40); pC5.marker.innerHTML = `<circle cx="${pC5.sx(tx)}" cy="${pC5.sy(C5(tx))}" r="8" fill="#FFD98E" stroke="#fff" stroke-width="3"/>`; }
+}
+document.getElementById('sl-conc')?.addEventListener('input', updConc); updConc();
+
+/* ════════ dinámicas de la página ════════ */
+const barra = document.getElementById('progreso');
+const btnSubir = document.getElementById('subir');
+function onScroll(){
+  const h = document.documentElement;
+  const p = h.scrollTop / (h.scrollHeight - h.clientHeight) * 100;
+  barra.style.width = p + '%';
+  btnSubir.classList.toggle('visible', h.scrollTop > 500);
+}
+window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+btnSubir.addEventListener('click', ()=>window.scrollTo({top:0, behavior:'smooth'}));
+
+const animOK = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(animOK && 'IntersectionObserver' in window){
+  document.querySelectorAll('.card, .semana-head, .mirror article, figure.info, .infokawaii').forEach(el=>el.classList.add('reveal'));
+  const io = new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.08});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+}
+</script>
+</body>
+</html>

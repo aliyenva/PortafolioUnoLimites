@@ -206,17 +206,18 @@ footer{
 .nav-semanas{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:26px;
 }
-a.tarjeta-semana{
+.tarjeta-semana{
   text-decoration:none;background:#fff;border-radius:var(--radio);box-shadow:var(--sombra);
   padding:22px;color:var(--tinta);transition:transform .15s ease;border-top:6px solid var(--rosa);
+  display:block;
 }
-a.tarjeta-semana:nth-child(2){border-top-color:var(--lila)}
-a.tarjeta-semana:nth-child(3){border-top-color:var(--menta)}
-a.tarjeta-semana:nth-child(4){border-top-color:#f7c873}
+.nav-semanas .tarjeta-semana:nth-child(2){border-top-color:var(--lila)}
+.nav-semanas .tarjeta-semana:nth-child(3){border-top-color:var(--menta)}
+.nav-semanas .tarjeta-semana:nth-child(4){border-top-color:#f7c873}
 a.tarjeta-semana:hover,a.tarjeta-semana:focus-visible{transform:translateY(-4px)}
-a.tarjeta-semana .emo{font-size:1.8rem}
-a.tarjeta-semana h3{color:var(--rosa-oscuro);margin:8px 0 4px}
-a.tarjeta-semana p{font-size:.9rem;color:var(--tinta-suave);font-weight:600}
+.tarjeta-semana .emo{font-size:1.8rem}
+.tarjeta-semana h3{color:var(--rosa-oscuro);margin:8px 0 4px}
+.tarjeta-semana p{font-size:.9rem;color:var(--tinta-suave);font-weight:600}
 .pager{display:flex;justify-content:space-between;gap:12px;margin-top:34px;flex-wrap:wrap}
 .pager a{
   text-decoration:none;font-weight:800;color:var(--rosa-oscuro);background:#fff;
